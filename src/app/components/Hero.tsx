@@ -31,7 +31,7 @@ export function Hero() {
         <div
           style={{
             fontFamily: "'Great Vibes', cursive",
-            fontSize: "clamp(3rem, 8vw, 6rem)",
+            fontSize: "6rem",
             letterSpacing: "6px",
             marginBottom: "1rem",
             opacity: 0.85,
