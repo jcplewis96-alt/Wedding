@@ -30,8 +30,8 @@ export function Hero() {
 
         <div
           style={{
-            fontFamily: "'Cormorant Upright', serif",
-            fontSize: "clamp(2rem, 5vw, 4rem)",
+            fontFamily: "'Great Vibes', cursive",
+            fontSize: "clamp(2rem, 7vw, 4rem)",
             letterSpacing: "6px",
             marginBottom: "1rem",
             opacity: 0.85,
