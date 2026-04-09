@@ -3,36 +3,101 @@ import { Heart } from "lucide-react";
 export function Hero() {
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1621797005674-48e0150206da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb21hbnRpYyUyMHdlZGRpbmclMjBjb3VwbGUlMjBzdW5zZXR8ZW58MXx8fHwxNzc1NjEzMDI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')`
+          backgroundImage: `url('https://images.unsplash.com/photo-1621797005674-48e0150206da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb21hbnRpYyUyMHdlZGRpbmclMjBjb3VwbGUlMjBzdW5zZXR8ZW58MXx8fHwxNzc1NjEzMDI4fDA&ixlib=rb-4.1.0&q=80&w=1080')`
         }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
-      
+
       <div className="relative z-10 text-center text-white px-4">
-        <Heart className="w-16 h-16 mx-auto mb-6 animate-pulse" />
-        <h1 className="text-6xl md:text-8xl mb-4 font-serif">
-          Emma & James
+        <Heart className="w-12 h-12 mx-auto mb-8 animate-pulse" style={{ color: "#f0d878" }} />
+
+        <h1
+          style={{
+            fontFamily: "'Great Vibes', cursive",
+            fontSize: "clamp(3rem, 10vw, 7rem)",
+            lineHeight: 1.1,
+            marginBottom: "1.2rem",
+            textShadow: "0 2px 20px rgba(0,0,0,0.4)",
+            fontWeight: 400,
+          }}
+        >
+          María de los Ángeles
         </h1>
-        <div className="text-2xl md:text-3xl mb-6 tracking-widest">
-          ARE GETTING MARRIED
+
+        <div
+          style={{
+            fontFamily: "'Cormorant Upright', serif",
+            fontSize: "clamp(0.9rem, 2vw, 1.3rem)",
+            letterSpacing: "6px",
+            marginBottom: "1rem",
+            opacity: 0.85,
+          }}
+        >
+          &
         </div>
-        <div className="text-xl md:text-2xl">
-          June 15, 2026
+
+        <h1
+          style={{
+            fontFamily: "'Great Vibes', cursive",
+            fontSize: "clamp(3rem, 10vw, 7rem)",
+            lineHeight: 1.1,
+            marginBottom: "2.5rem",
+            textShadow: "0 2px 20px rgba(0,0,0,0.4)",
+            fontWeight: 400,
+          }}
+        >
+          Juan Carlos
+        </h1>
+
+        {/* Decorative line */}
+        <div style={{
+          display: "flex", alignItems: "center", justifyContent: "center",
+          gap: "16px", marginBottom: "2rem",
+        }}>
+          <div style={{ width: "60px", height: "1px", background: "rgba(240,216,120,0.6)" }} />
+          <div style={{ fontSize: "10px", color: "#f0d878", letterSpacing: "4px", fontFamily: "'Cormorant Upright', serif" }}>✦</div>
+          <div style={{ width: "60px", height: "1px", background: "rgba(240,216,120,0.6)" }} />
         </div>
-        <div className="mt-8 text-lg">
-          Napa Valley, California
+
+        <div
+          style={{
+            fontFamily: "'Cormorant Upright', serif",
+            fontSize: "clamp(1rem, 2.2vw, 1.3rem)",
+            letterSpacing: "4px",
+            marginBottom: "0.6rem",
+            opacity: 0.9,
+            fontStyle: "italic",
+          }}
+        >
+          18 de Julio de 2026
+        </div>
+
+        <div
+          style={{
+            fontFamily: "'Cormorant Upright', serif",
+            fontSize: "clamp(0.85rem, 1.8vw, 1.1rem)",
+            letterSpacing: "3px",
+            opacity: 0.75,
+          }}
+        >
+          Hacienda El Salitre · Bogotá, Colombia
         </div>
       </div>
-      
+
+      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center" style={{ borderColor: "rgba(240,216,120,0.6)" }}>
+          <div className="w-1 h-3 bg-white rounded-full mt-2" style={{ background: "rgba(240,216,120,0.8)" }}></div>
         </div>
       </div>
+
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Upright:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+      `}</style>
     </div>
   );
 }
