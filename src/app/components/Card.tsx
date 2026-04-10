@@ -12,21 +12,21 @@ export function Card() {
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Upright:ital,wght@0,300;0,400;1,300;1,400&display=swap');
-
+ 
         @keyframes cardFadeIn {
           from { opacity: 0; transform: translateY(30px); }
           to   { opacity: 1; transform: translateY(0); }
         }
       `}</style>
-
+ 
       {/* Outer card with double border like the photo */}
       <div
         style={{
           position: "relative",
           width: "100%",
           maxWidth: "680px",
-          background: "linear-gradient(160deg, #fefefа 0%, #fbf8f0 40%, #f8f4ea 70%, #faf6ed 100%)",
           backgroundColor: "#faf8f3",
+          background: "linear-gradient(160deg, #fefefe 0%, #fbf8f0 40%, #f8f4ea 70%, #faf6ed 100%)",
           padding: "8px",
           boxShadow: "0 20px 80px rgba(0,0,0,0.12), 0 4px 20px rgba(0,0,0,0.06)",
           animation: "cardFadeIn 1.2s ease forwards",
@@ -42,7 +42,7 @@ export function Card() {
             zIndex: 1,
           }}
         />
-
+ 
         {/* Inner content */}
         <div
           style={{
@@ -52,7 +52,7 @@ export function Card() {
             zIndex: 2,
           }}
         >
-
+ 
           {/* Parents row */}
           <div
             style={{
@@ -76,14 +76,14 @@ export function Card() {
                 Ángel Custodio Gámez
               </p>
             </div>
-
+ 
             {/* Decorative center divider */}
             <div style={{
               width: "1px",
               background: "linear-gradient(to bottom, transparent, #c9a96e, transparent)",
               flexShrink: 0,
             }} />
-
+ 
             {/* Parents of groom */}
             <div style={{ flex: 1, textAlign: "center" }}>
               <p style={{
@@ -99,7 +99,7 @@ export function Card() {
               </p>
             </div>
           </div>
-
+ 
           {/* Gold divider */}
           <div style={{
             display: "flex", alignItems: "center",
@@ -110,7 +110,7 @@ export function Card() {
             <span style={{ color: "#c9a96e", fontSize: "12px" }}>✦</span>
             <div style={{ height: "1px", width: "80px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
           </div>
-
+ 
           {/* Invitation phrase */}
           <p style={{
             fontFamily: "'Cormorant Upright', serif",
@@ -122,7 +122,7 @@ export function Card() {
           }}>
             tienen el gusto de invitar al matrimonio de sus hijos
           </p>
-
+ 
           {/* Names in gold Great Vibes */}
           <div style={{ marginBottom: "32px" }}>
             <p style={{
@@ -155,7 +155,7 @@ export function Card() {
               Juan Carlos
             </p>
           </div>
-
+ 
           {/* Gold divider */}
           <div style={{
             display: "flex", alignItems: "center",
@@ -166,7 +166,7 @@ export function Card() {
             <span style={{ color: "#c9a96e", fontSize: "10px" }}>✦</span>
             <div style={{ height: "1px", width: "60px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
           </div>
-
+ 
           {/* Ceremony details */}
           <div style={{ marginBottom: "32px" }}>
             <p style={{
@@ -183,7 +183,7 @@ export function Card() {
               y a la recepción que se ofrecerá a continuación
             </p>
           </div>
-
+ 
           {/* Gold divider */}
           <div style={{
             display: "flex", alignItems: "center",
@@ -194,7 +194,7 @@ export function Card() {
             <span style={{ color: "#c9a96e", fontSize: "12px" }}>✦</span>
             <div style={{ height: "1px", width: "80px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
           </div>
-
+ 
           {/* City and date */}
           <p style={{
             fontFamily: "'Cormorant Upright', serif",
@@ -206,7 +206,7 @@ export function Card() {
           }}>
             Bogotá, 18 de Julio de 2026
           </p>
-
+ 
         </div>
       </div>
     </section>
