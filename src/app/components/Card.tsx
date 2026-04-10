@@ -59,29 +59,35 @@ export function Card() {
               display: "flex",
               justifyContent: "center",
               marginBottom: "32px",
+              marginTop: "8px",
               gap: "0",
+              overflow: "hidden",
             }}
           >
             {/* Parents of bride */}
-            <div style={{ flex: 1, textAlign: "center", paddingRight: "20px" }}>
+            <div style={{ flex: 1, textAlign: "center", paddingRight: "16px", minWidth: 0 }}>
               <p style={{
                 fontFamily: "'Cormorant Upright', serif",
                 fontStyle: "italic",
-                fontSize: "clamp(11px, 1.4vw, 15px)",
+                fontSize: "clamp(10px, 2.8vw, 15px)",
                 color: "#7a6040",
                 lineHeight: 2.0,
                 margin: 0,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
                 whiteSpace: "nowrap",
               }}>
-                Ángel Custodio Gámez
+                Ángel Custodio Raga Gámez
               </p>
               <p style={{
                 fontFamily: "'Cormorant Upright', serif",
                 fontStyle: "italic",
-                fontSize: "clamp(11px, 1.4vw, 15px)",
+                fontSize: "clamp(10px, 2.8vw, 15px)",
                 color: "#7a6040",
                 lineHeight: 2.0,
                 margin: 0,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
                 whiteSpace: "nowrap",
               }}>
                 Luz Stella Rodríguez Sandoval
@@ -97,14 +103,16 @@ export function Card() {
             }} />
 
             {/* Parents of groom */}
-            <div style={{ flex: 1, textAlign: "center", paddingLeft: "20px" }}>
+            <div style={{ flex: 1, textAlign: "center", paddingLeft: "16px", minWidth: 0 }}>
               <p style={{
                 fontFamily: "'Cormorant Upright', serif",
                 fontStyle: "italic",
-                fontSize: "clamp(11px, 1.4vw, 15px)",
+                fontSize: "clamp(10px, 2.8vw, 15px)",
                 color: "#7a6040",
                 lineHeight: 2.0,
                 margin: 0,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
                 whiteSpace: "nowrap",
               }}>
                 Juan Carlos Peñaranda Ávila
@@ -112,10 +120,12 @@ export function Card() {
               <p style={{
                 fontFamily: "'Cormorant Upright', serif",
                 fontStyle: "italic",
-                fontSize: "clamp(11px, 1.4vw, 15px)",
+                fontSize: "clamp(10px, 2.8vw, 15px)",
                 color: "#7a6040",
                 lineHeight: 2.0,
                 margin: 0,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
                 whiteSpace: "nowrap",
               }}>
                 María Beatríz Lewis Porras
