@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
+import { Wave } from "./components/Wave";
 import { Card } from "./components/Card";
 import { DressCode } from "./components/DressCode";
 import { Detalles } from "./components/Detalles";
@@ -612,14 +613,23 @@ export default function App() {
       {/* Main content */}
       <Navbar />
       <div id="hero"><Hero /></div>
+      <Wave topColor="#000000"    bottomColor="#f0ebe2"  />
       <div id="invitacion"><Card /></div>
+      <Wave topColor="#ede7dc"    bottomColor="#e8e2d8"  />
       <div id="dresscode"><DressCode /></div>
+      <Wave topColor="#e8e2d8"    bottomColor="#faf6ed"  />
       <div id="detalles"><Detalles /></div>
+      <Wave topColor="#faf6ed"    bottomColor="#ffffff"  />
       <div id="historia"><OurStory /></div>
+      <Wave topColor="#ffffff"    bottomColor="#f8fafc"  />
       <div id="ceremonia"><WeddingDetails /></div>
+      <Wave topColor="#f8fafc"    bottomColor="#ffffff"  flip />
       <Schedule />
+      <Wave topColor="#ffffff"    bottomColor="#ffffff"  />
       <Gallery />
+      <Wave topColor="#ffffff"    bottomColor="#ffffff"  flip />
       <div id="rsvp"><RSVP /></div>
+      <Wave topColor="#ffffff"    bottomColor="#1e293b"  />
       <Travel />
       <Footer />
       <Toaster />
