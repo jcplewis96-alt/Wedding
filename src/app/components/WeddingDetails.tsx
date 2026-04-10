@@ -1,10 +1,11 @@
+import { FadeIn } from "./FadeIn";
 import { Calendar, Clock, MapPin, Church } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function WeddingDetails() {
   return (
-    <section className="py-20 px-4" style={{ background: "#e8e2d8" }}>
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-4 bg-slate-50">
+      <FadeIn direction="up" duration={900}><div className="max-w-6xl mx-auto">
         <h2 className="text-5xl text-center mb-16 font-serif">Wedding Details</h2>
         
         <div className="grid md:grid-cols-2 gap-12">
@@ -93,6 +94,6 @@ export function WeddingDetails() {
           </p>
         </div>
       </div>
-    </section>
+    </div></FadeIn></section>
   );
 }
