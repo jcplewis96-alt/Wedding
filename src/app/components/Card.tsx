@@ -72,8 +72,8 @@ export function Card() {
                 lineHeight: 1.7,
                 margin: 0,
               }}>
-                Luz Stella Rodríguez Sandoval<br />
-                Ángel Custodio Gámez
+                Ángel Custodio Raga Gámez<br />
+                Luz Stella Rodríguez Sandoval
               </p>
             </div>
  
@@ -94,8 +94,8 @@ export function Card() {
                 lineHeight: 1.7,
                 margin: 0,
               }}>
-                María Beatríz Lewis Porras<br />
-                Juan Carlos Peñaranda Ávila
+                Juan Carlos Peñaranda Ávila<br />
+                María Beatríz Lewis Porras
               </p>
             </div>
           </div>
@@ -177,8 +177,8 @@ export function Card() {
               lineHeight: 1.9,
               margin: 0,
             }}>
-              ceremonia que se celebrará<br />
-              el sábado dieciocho de julio a las cuatro de la tarde<br />
+              Ceremonia que se celebrará<br />
+              el sábado dieciocho de julio a las 4:00 pm<br />
               en la <strong style={{ fontWeight: 500, color: "#8B6F47" }}>Hacienda El Salitre</strong><br />
               y a la recepción que se ofrecerá a continuación
             </p>
