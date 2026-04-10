@@ -40,7 +40,8 @@ export function Schedule() {
 
   return (
     <section className="py-20 px-4 bg-white">
-      <FadeIn direction="up" duration={900}><div className="max-w-4xl mx-auto">
+      <FadeIn direction="up" duration={900}>
+        <div className="max-w-4xl mx-auto">
         <h2 className="text-5xl text-center mb-16 font-serif">Schedule</h2>
         
         <div className="relative">
@@ -62,6 +63,7 @@ export function Schedule() {
           </div>
         </div>
       </div>
-    </div></FadeIn></section>
+      </FadeIn>
+    </section>
   );
 }
