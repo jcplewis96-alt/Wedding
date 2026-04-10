@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Hero } from "./components/Hero";
 import { Card } from "./components/Card";
+import { DressCode } from "./components/DressCode";
 import { OurStory } from "./components/OurStory";
 import { WeddingDetails } from "./components/WeddingDetails";
 import { Schedule } from "./components/Schedule";
@@ -609,6 +610,7 @@ export default function App() {
       {/* Main content */}
       <Hero />
       <Card />
+      <DressCode />
       <OurStory />
       <WeddingDetails />
       <Schedule />
