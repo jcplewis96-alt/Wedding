@@ -1,9 +1,10 @@
+import { FadeIn } from "./FadeIn";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function OurStory() {
   return (
-    <section className="py-20 px-4" style={{ background: "#faf6ed" }}>
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-4 bg-white">
+      <FadeIn direction="up" duration={900}><div className="max-w-6xl mx-auto">
         <h2 className="text-5xl text-center mb-16 font-serif">Our Story</h2>
         
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
@@ -36,6 +37,6 @@ export function OurStory() {
           </div>
         </div>
       </div>
-    </section>
+    </div></FadeIn></section>
   );
 }
