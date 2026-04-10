@@ -12,13 +12,13 @@ export function Card() {
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Upright:ital,wght@0,300;0,400;1,300;1,400&display=swap');
- 
+
         @keyframes cardFadeIn {
           from { opacity: 0; transform: translateY(30px); }
           to   { opacity: 1; transform: translateY(0); }
         }
       `}</style>
- 
+
       {/* Outer card with double border like the photo */}
       <div
         style={{
@@ -42,64 +42,87 @@ export function Card() {
             zIndex: 1,
           }}
         />
- 
+
         {/* Inner content */}
         <div
           style={{
-            padding: "52px 56px 48px",
+            padding: "clamp(28px, 6vw, 52px) clamp(20px, 6vw, 56px) clamp(28px, 5vw, 48px)",
             textAlign: "center",
             position: "relative",
             zIndex: 2,
           }}
         >
- 
+
           {/* Parents row */}
           <div
             style={{
               display: "flex",
-              justifyContent: "space-between",
+              justifyContent: "center",
               marginBottom: "32px",
-              gap: "24px",
+              gap: "0",
             }}
           >
             {/* Parents of bride */}
-            <div style={{ flex: 1, textAlign: "center" }}>
+            <div style={{ flex: 1, textAlign: "center", paddingRight: "20px" }}>
               <p style={{
                 fontFamily: "'Cormorant Upright', serif",
                 fontStyle: "italic",
-                fontSize: "clamp(13px, 1.6vw, 16px)",
+                fontSize: "clamp(11px, 1.4vw, 15px)",
                 color: "#7a6040",
-                lineHeight: 1.7,
+                lineHeight: 2.0,
                 margin: 0,
+                whiteSpace: "nowrap",
               }}>
-                Ángel Custodio Raga Gámez<br />
+                Ángel Custodio Gámez
+              </p>
+              <p style={{
+                fontFamily: "'Cormorant Upright', serif",
+                fontStyle: "italic",
+                fontSize: "clamp(11px, 1.4vw, 15px)",
+                color: "#7a6040",
+                lineHeight: 2.0,
+                margin: 0,
+                whiteSpace: "nowrap",
+              }}>
                 Luz Stella Rodríguez Sandoval
               </p>
             </div>
- 
+
             {/* Decorative center divider */}
             <div style={{
               width: "1px",
+              minHeight: "80px",
               background: "linear-gradient(to bottom, transparent, #c9a96e, transparent)",
               flexShrink: 0,
             }} />
- 
+
             {/* Parents of groom */}
-            <div style={{ flex: 1, textAlign: "center" }}>
+            <div style={{ flex: 1, textAlign: "center", paddingLeft: "20px" }}>
               <p style={{
                 fontFamily: "'Cormorant Upright', serif",
                 fontStyle: "italic",
-                fontSize: "clamp(13px, 1.6vw, 16px)",
+                fontSize: "clamp(11px, 1.4vw, 15px)",
                 color: "#7a6040",
-                lineHeight: 1.7,
+                lineHeight: 2.0,
                 margin: 0,
+                whiteSpace: "nowrap",
               }}>
-                Juan Carlos Peñaranda Ávila<br />
+                Juan Carlos Peñaranda Ávila
+              </p>
+              <p style={{
+                fontFamily: "'Cormorant Upright', serif",
+                fontStyle: "italic",
+                fontSize: "clamp(11px, 1.4vw, 15px)",
+                color: "#7a6040",
+                lineHeight: 2.0,
+                margin: 0,
+                whiteSpace: "nowrap",
+              }}>
                 María Beatríz Lewis Porras
               </p>
             </div>
           </div>
- 
+
           {/* Gold divider */}
           <div style={{
             display: "flex", alignItems: "center",
@@ -110,7 +133,7 @@ export function Card() {
             <span style={{ color: "#c9a96e", fontSize: "12px" }}>✦</span>
             <div style={{ height: "1px", width: "80px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
           </div>
- 
+
           {/* Invitation phrase */}
           <p style={{
             fontFamily: "'Cormorant Upright', serif",
@@ -122,7 +145,7 @@ export function Card() {
           }}>
             tienen el gusto de invitar al matrimonio de sus hijos
           </p>
- 
+
           {/* Names in gold Great Vibes */}
           <div style={{ marginBottom: "32px" }}>
             <p style={{
@@ -155,7 +178,7 @@ export function Card() {
               Juan Carlos
             </p>
           </div>
- 
+
           {/* Gold divider */}
           <div style={{
             display: "flex", alignItems: "center",
@@ -166,7 +189,7 @@ export function Card() {
             <span style={{ color: "#c9a96e", fontSize: "10px" }}>✦</span>
             <div style={{ height: "1px", width: "60px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
           </div>
- 
+
           {/* Ceremony details */}
           <div style={{ marginBottom: "32px" }}>
             <p style={{
@@ -177,13 +200,13 @@ export function Card() {
               lineHeight: 1.9,
               margin: 0,
             }}>
-              Ceremonia que se celebrará<br />
-              el sábado dieciocho de julio a las 4:00 pm<br />
+              ceremonia que se celebrará<br />
+              el sábado dieciocho de julio a las cuatro de la tarde<br />
               en la <strong style={{ fontWeight: 500, color: "#8B6F47" }}>Hacienda El Salitre</strong><br />
               y a la recepción que se ofrecerá a continuación
             </p>
           </div>
- 
+
           {/* Gold divider */}
           <div style={{
             display: "flex", alignItems: "center",
@@ -194,7 +217,7 @@ export function Card() {
             <span style={{ color: "#c9a96e", fontSize: "12px" }}>✦</span>
             <div style={{ height: "1px", width: "80px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
           </div>
- 
+
           {/* City and date */}
           <p style={{
             fontFamily: "'Cormorant Upright', serif",
@@ -206,7 +229,7 @@ export function Card() {
           }}>
             Bogotá, 18 de Julio de 2026
           </p>
- 
+
         </div>
       </div>
     </section>
