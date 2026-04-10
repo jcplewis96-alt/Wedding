@@ -38,7 +38,7 @@ export function Schedule() {
   ];
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4" style={{ background: "#faf6ed" }}>
       <div className="max-w-4xl mx-auto">
         <h2 className="text-5xl text-center mb-16 font-serif">Schedule</h2>
         
