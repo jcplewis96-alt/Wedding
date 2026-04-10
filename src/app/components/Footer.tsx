@@ -2,7 +2,7 @@ import { Heart, Instagram, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-slate-900 text-white py-12 px-4">
+    <footer className="py-12 px-4" style={{ background: "#3a2810", color: "white" }}>
       <div className="max-w-4xl mx-auto text-center">
         <Heart className="w-8 h-8 mx-auto mb-4 text-rose-400" />
         <h3 className="text-2xl mb-2 font-serif">Emma & James</h3>
