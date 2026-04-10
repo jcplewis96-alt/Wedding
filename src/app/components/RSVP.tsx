@@ -31,7 +31,7 @@ export function RSVP() {
   };
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4" style={{ background: "#faf6ed" }}>
       <div className="max-w-2xl mx-auto">
         <h2 className="text-5xl text-center mb-6 font-serif">RSVP</h2>
         <p className="text-center text-gray-600 mb-12">
