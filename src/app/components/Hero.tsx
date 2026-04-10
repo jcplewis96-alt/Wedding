@@ -6,7 +6,7 @@ export function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('/home/ubuntu/Wedding/hero.jpg')`
+          backgroundImage: `url('/hero.jpg')`
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
@@ -31,7 +31,7 @@ export function Hero() {
         <div
           style={{
             fontFamily: "'Great Vibes', cursive",
-            fontSize: "clamp(3rem, 5vw, 4rem)",
+            fontSize: "clamp(3rem, 8vw, 5.5rem)",
             lineHeight: 1.0,
             marginBottom: "1rem",
             opacity: 0.95,
