@@ -59,7 +59,7 @@ export function Card() {
               display: "flex",
               justifyContent: "center",
               marginBottom: "32px",
-              marginTop: "8px",
+              marginTop: "24px",
               gap: "0",
               overflow: "hidden",
             }}
