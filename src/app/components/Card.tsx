@@ -1,3 +1,4 @@
+import { FadeIn } from "./FadeIn";
 export function Card() {
   return (
     <section
@@ -12,13 +13,9 @@ export function Card() {
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Upright:ital,wght@0,300;0,400;1,300;1,400&display=swap');
-
-        @keyframes cardFadeIn {
-          from { opacity: 0; transform: translateY(30px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
       `}</style>
 
+      <FadeIn direction="up" duration={900}>
       {/* Outer card with double border like the photo */}
       <div
         style={{
@@ -59,7 +56,7 @@ export function Card() {
               display: "flex",
               justifyContent: "center",
               marginBottom: "32px",
-              marginTop: "35px",
+              marginTop: "24px",
               gap: "0",
               overflow: "hidden",
             }}
@@ -242,6 +239,7 @@ export function Card() {
 
         </div>
       </div>
+      </FadeIn>
     </section>
   );
 }
