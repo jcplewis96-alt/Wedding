@@ -114,6 +114,35 @@ export function DressCode() {
                 fontSize: "clamp(11px, 1.8vw, 13px)",
                 color: "#a89070", margin: "4px 0 0",
               }}>sin estampados</p>
+              <a
+                href="https://pin.it/3Pg32udDG"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  marginTop: "14px",
+                  padding: "8px 20px",
+                  border: "1px solid #c9a96e",
+                  color: "#8B6520",
+                  fontFamily: "'Cormorant Upright', serif",
+                  fontSize: "clamp(11px, 1.8vw, 13px)",
+                  letterSpacing: "2px",
+                  textDecoration: "none",
+                  textTransform: "uppercase",
+                  transition: "background 0.3s ease, color 0.3s ease",
+                  background: "transparent",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = "#c9a96e";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#8B6520";
+                }}
+              >
+                Ideas de vestido
+              </a>
             </div>
           </div>
 
