@@ -79,6 +79,37 @@ export function Detalles() {
             el día del evento.
           </p>
 
+          {/* Bank details */}
+          <div style={{
+            marginBottom: "24px",
+            padding: "20px 24px",
+            border: "1px solid #d0c0a0",
+            borderRadius: "2px",
+            background: "rgba(255,255,255,0.5)",
+          }}>
+            <p style={{
+              fontFamily: "'Cormorant Upright', serif",
+              fontSize: "clamp(10px, 2vw, 12px)",
+              letterSpacing: "3px",
+              color: "#c9a96e",
+              textTransform: "uppercase",
+              margin: "0 0 14px",
+            }}>Datos bancarios</p>
+            <div style={{
+              fontFamily: "'Cormorant Upright', serif",
+              fontStyle: "italic",
+              fontSize: "clamp(13px, 2vw, 15px)",
+              color: "#7a6040",
+              lineHeight: 2.0,
+            }}>
+              <p style={{ margin: 0 }}>No. de cuenta: <strong style={{ fontWeight: 500 }}>64050881961</strong></p>
+              <p style={{ margin: 0 }}>María de los Ángeles Raga</p>
+              <p style={{ margin: 0 }}>C.C. <strong style={{ fontWeight: 500 }}>1020825384</strong></p>
+              <p style={{ margin: 0 }}>Bancolombia · Ahorros</p>
+              <p style={{ margin: 0 }}>Llave: <strong style={{ fontWeight: 500 }}>1020825384</strong></p>
+            </div>
+          </div>
+
           {/* Gold divider */}
           <div style={{
             display: "flex", alignItems: "center",
