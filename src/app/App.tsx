@@ -613,24 +613,25 @@ export default function App() {
       {/* Main content */}
       <Navbar />
       <div id="hero"><Hero /></div>
-      <Wave topColor="#000000"    bottomColor="#f0ebe2"  />
+      <Wave topColor="#000000"   bottomColor="#f0ebe2"  />
       <div id="invitacion"><Card /></div>
-      <Wave topColor="#ede7dc"    bottomColor="#e8e2d8"  />
+      <Wave topColor="#ede7dc"   bottomColor="#e8e2d8"  />
       <div id="dresscode"><DressCode /></div>
-      <Wave topColor="#e8e2d8"    bottomColor="#faf6ed"  />
+      <Wave topColor="#e8e2d8"   bottomColor="#faf6ed"  />
       <div id="detalles"><Detalles /></div>
-      <Wave topColor="#faf6ed"    bottomColor="#ffffff"  />
+      <Wave topColor="#faf6ed"   bottomColor="#ffffff"  />
       <div id="historia"><OurStory /></div>
-      <Wave topColor="#ffffff"    bottomColor="#f8fafc"  />
+      <Wave topColor="#ffffff"   bottomColor="#f8fafc"  />
       <div id="ceremonia"><WeddingDetails /></div>
-      <Wave topColor="#f8fafc"    bottomColor="#ffffff"  flip />
+      <Wave topColor="#f8fafc"   bottomColor="#ffffff"  flip />
       <Schedule />
-      <Wave topColor="#ffffff"    bottomColor="#ffffff"  />
+      <Wave topColor="#ffffff"   bottomColor="#ffffff"  />
       <Gallery />
-      <Wave topColor="#ffffff"    bottomColor="#ffffff"  flip />
+      <Wave topColor="#ffffff"   bottomColor="#ffffff"  flip />
       <div id="rsvp"><RSVP /></div>
-      <Wave topColor="#ffffff"    bottomColor="#1e293b"  />
+      <Wave topColor="#ffffff"   bottomColor="#e8e2d8"  />
       <Travel />
+      <Wave topColor="#e8e2d8"   bottomColor="#3a2810"  />
       <Footer />
       <Toaster />
     </div>
