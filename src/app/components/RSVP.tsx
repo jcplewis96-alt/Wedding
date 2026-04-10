@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FadeIn } from "./FadeIn"; from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -31,8 +32,8 @@ export function RSVP() {
   };
 
   return (
-    <section className="py-20 px-4" style={{ background: "#faf6ed" }}>
-      <div className="max-w-2xl mx-auto">
+    <section className="py-20 px-4 bg-white">
+      <FadeIn direction="up" duration={900}><div className="max-w-2xl mx-auto">
         <h2 className="text-5xl text-center mb-6 font-serif">RSVP</h2>
         <p className="text-center text-gray-600 mb-12">
           We would be honored by your presence. Please respond by May 1, 2026.
@@ -125,6 +126,6 @@ export function RSVP() {
           </Button>
         </form>
       </div>
-    </section>
+    </div></FadeIn></section>
   );
 }
