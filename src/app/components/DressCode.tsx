@@ -62,72 +62,17 @@ export function DressCode() {
             <div style={{ height: "1px", width: "60px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
           </div>
 
-          {/* SVG Couple */}
-          <div style={{ margin: "0 auto 32px", maxWidth: "240px" }}>
-            <svg viewBox="0 0 220 340" width="100%" style={{ display: "block" }}>
-              {/* ===== WOMAN ===== */}
-              <g>
-                <ellipse cx="82" cy="42" rx="18" ry="20" fill="#c8b898"/>
-                <path d="M64 48 C60 60 62 75 65 85" stroke="#b8a07a" strokeWidth="2" fill="none"/>
-                <path d="M100 48 C102 58 100 70 97 82" stroke="#b8a07a" strokeWidth="1.5" fill="none"/>
-                <ellipse cx="82" cy="28" rx="10" ry="8" fill="#c8b898"/>
-                <ellipse cx="82" cy="26" rx="7" ry="5" fill="#d4c4a0"/>
-                <rect x="78" y="62" width="8" height="14" rx="3" fill="#d4b896"/>
-                <ellipse cx="82" cy="50" rx="16" ry="18" fill="#d4b896"/>
-                <ellipse cx="76" cy="48" rx="2.5" ry="3" fill="#b89070" opacity="0.5"/>
-                <ellipse cx="88" cy="48" rx="2.5" ry="3" fill="#b89070" opacity="0.5"/>
-                <path d="M79 56 Q82 59 85 56" stroke="#b89070" strokeWidth="1.2" fill="none"/>
-                <circle cx="66" cy="52" r="2" fill="#c9a96e"/>
-                <line x1="66" y1="54" x2="66" y2="60" stroke="#c9a96e" strokeWidth="1"/>
-                <circle cx="66" cy="61" r="1.5" fill="#c9a96e"/>
-                <path d="M68 76 C65 80 63 90 64 100 L100 100 C101 90 99 80 96 76 Q89 72 82 72 Q75 72 68 76Z"
-                  fill="#e8dece" stroke="#d4c4a8" strokeWidth="0.8"/>
-                <path d="M96 76 C100 72 104 70 106 74 C108 78 106 82 102 84 L100 100"
-                  fill="#e8dece" stroke="#d4c4a8" strokeWidth="0.8"/>
-                <path d="M64 100 C58 120 54 150 52 180 C50 210 52 240 54 270 C56 290 60 310 62 330 L102 330 C104 310 108 290 110 270 C112 240 114 210 112 180 C110 150 106 120 100 100Z"
-                  fill="#ede4d4" stroke="#d4c4a8" strokeWidth="0.8"/>
-                <path d="M72 110 C70 140 68 170 66 200" stroke="#d4c4a8" strokeWidth="0.6" fill="none" opacity="0.7"/>
-                <path d="M82 106 C82 140 82 175 82 210" stroke="#d4c4a8" strokeWidth="0.6" fill="none" opacity="0.5"/>
-                <path d="M92 110 C94 140 96 170 98 200" stroke="#d4c4a8" strokeWidth="0.6" fill="none" opacity="0.7"/>
-                <path d="M66 102 Q82 106 98 102" stroke="#c9a96e" strokeWidth="0.8" fill="none"/>
-                <circle cx="74" cy="118" r="8" fill="#e0d4c0" stroke="#c8b898" strokeWidth="0.8"/>
-                <circle cx="80" cy="115" r="6" fill="#e8dece" stroke="#c8b898" strokeWidth="0.8"/>
-                <path d="M77 126 L77 138" stroke="#b8a878" strokeWidth="1.2"/>
-                <ellipse cx="64" cy="333" rx="6" ry="3" fill="#c8b898"/>
-                <ellipse cx="100" cy="333" rx="6" ry="3" fill="#c8b898"/>
-              </g>
-
-              {/* ===== MAN ===== */}
-              <g>
-                <path d="M134 35 C130 28 128 22 132 18 C136 14 146 14 150 18 C154 22 152 28 148 35" fill="#4a3828"/>
-                <ellipse cx="141" cy="48" rx="16" ry="18" fill="#c8a880"/>
-                <ellipse cx="135" cy="46" rx="2.5" ry="3" fill="#a07848" opacity="0.5"/>
-                <ellipse cx="147" cy="46" rx="2.5" ry="3" fill="#a07848" opacity="0.5"/>
-                <path d="M138 55 Q141 58 144 55" stroke="#a07848" strokeWidth="1.2" fill="none"/>
-                <rect x="137" y="62" width="8" height="14" rx="3" fill="#c8a880"/>
-                <rect x="135" y="74" width="12" height="10" rx="1" fill="#f5f0e8"/>
-                <path d="M139 76 L141 80 L143 76 L141 78Z" fill="#2a2018"/>
-                <path d="M120 78 C118 84 116 95 116 110 L166 110 C166 95 164 84 162 78 C158 74 152 70 141 70 C130 70 124 74 120 78Z" fill="#2a2018"/>
-                <path d="M141 70 L135 78 L141 86 L147 78Z" fill="#3a3028"/>
-                <path d="M135 78 C133 76 130 74 126 76 L124 80 L135 82Z" fill="#f5f0e8"/>
-                <path d="M147 78 C149 76 152 74 156 76 L158 80 L147 82Z" fill="#f5f0e8"/>
-                <path d="M155 82 L158 80 L160 84 L157 86Z" fill="#e8d8b8"/>
-                <path d="M116 110 L112 200 L130 200 L141 150 L152 200 L170 200 L166 110Z" fill="#2a2018"/>
-                <line x1="122" y1="112" x2="118" y2="198" stroke="#3a3028" strokeWidth="0.6"/>
-                <line x1="160" y1="112" x2="164" y2="198" stroke="#3a3028" strokeWidth="0.6"/>
-                <rect x="112" y="200" width="18" height="120" rx="4" fill="#2a2018"/>
-                <rect x="152" y="200" width="18" height="120" rx="4" fill="#2a2018"/>
-                <path d="M110 318 C108 322 108 328 116 330 L132 330 C134 328 132 322 130 318Z" fill="#1a1208"/>
-                <path d="M150 318 C148 322 148 328 156 330 L172 330 C174 328 172 322 170 318Z" fill="#1a1208"/>
-                <path d="M116 80 C110 90 106 110 108 130 L118 128 C116 112 118 94 122 84Z" fill="#2a2018"/>
-                <path d="M166 80 C172 90 176 110 174 130 L164 128 C166 112 164 94 160 84Z" fill="#2a2018"/>
-                <ellipse cx="112" cy="133" rx="6" ry="7" fill="#c8a880"/>
-                <ellipse cx="170" cy="133" rx="6" ry="7" fill="#c8a880"/>
-                <rect x="108" y="126" width="8" height="4" rx="1" fill="#c9a96e"/>
-                <rect x="166" y="126" width="8" height="4" rx="1" fill="#c9a96e"/>
-              </g>
-              <line x1="40" y1="335" x2="180" y2="335" stroke="#d4c4a8" strokeWidth="0.8" opacity="0.5"/>
-            </svg>
+          {/* Couple image */}
+          <div style={{ margin: "0 auto 32px", maxWidth: "320px" }}>
+            <img
+              src="/dress.jpeg"
+              alt="Vestimenta de gala — Smoking y Vestido largo"
+              style={{
+                width: "100%",
+                display: "block",
+                objectFit: "contain",
+              }}
+            />
           </div>
 
           {/* Two columns: Hombre / Mujer */}
