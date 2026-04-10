@@ -1,3 +1,4 @@
+import { FadeIn } from "./FadeIn";
 export function Detalles() {
   return (
     <section
@@ -14,6 +15,7 @@ export function Detalles() {
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Upright:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
       `}</style>
 
+      <FadeIn direction="up" duration={900}>
       <div
         style={{
           width: "100%",
@@ -155,6 +157,7 @@ export function Detalles() {
 
         </div>
       </div>
+      </FadeIn>
     </section>
   );
 }
