@@ -6,8 +6,6 @@ import { Card } from "./components/Card";
 import { DressCode } from "./components/DressCode";
 import { Detalles } from "./components/Detalles";
 import { OurStory } from "./components/OurStory";
-import { WeddingDetails } from "./components/WeddingDetails";
-import { Schedule } from "./components/Schedule";
 import { Gallery } from "./components/Gallery";
 import { RSVP } from "./components/RSVP";
 import { Travel } from "./components/Travel";
@@ -621,10 +619,6 @@ export default function App() {
       <div id="detalles"><Detalles /></div>
       <Wave topColor="#faf6ed"   bottomColor="#ffffff"  />
       <div id="historia"><OurStory /></div>
-      <Wave topColor="#ffffff"   bottomColor="#f8fafc"  />
-      <div id="ceremonia"><WeddingDetails /></div>
-      <Wave topColor="#f8fafc"   bottomColor="#ffffff"  flip />
-      <Schedule />
       <Wave topColor="#ffffff"   bottomColor="#ffffff"  />
       <Gallery />
       <Wave topColor="#ffffff"   bottomColor="#ffffff"  flip />
