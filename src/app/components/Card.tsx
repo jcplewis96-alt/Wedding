@@ -231,11 +231,46 @@ export function Card() {
             fontStyle: "italic",
             fontSize: "clamp(14px, 1.8vw, 17px)",
             color: "#7a6040",
-            margin: 0,
+            margin: "0 0 24px",
             letterSpacing: "1px",
           }}>
             Bogotá, 18 de Julio de 2026
           </p>
+
+          {/* Google Maps button */}
+          <a
+            href="https://maps.app.goo.gl/PJQuaTE4ZoGHqHMv6"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "10px 28px",
+              border: "1px solid #c9a96e",
+              color: "#8B6520",
+              fontFamily: "'Cormorant Upright', serif",
+              fontSize: "clamp(11px, 1.8vw, 13px)",
+              letterSpacing: "2px",
+              textDecoration: "none",
+              textTransform: "uppercase",
+              background: "transparent",
+              transition: "background 0.3s ease, color 0.3s ease",
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLAnchorElement).style.background = "#c9a96e";
+              (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+              (e.currentTarget as HTMLAnchorElement).style.color = "#8B6520";
+            }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            Ver ubicación
+          </a>
 
         </div>
       </div>
