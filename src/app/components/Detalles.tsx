@@ -1,3 +1,4 @@
+
 import { FadeIn } from "./FadeIn";
 export function Detalles() {
   return (
@@ -34,7 +35,7 @@ export function Detalles() {
         }} />
 
         <div style={{
-          padding: "clamp(28px, 6vw, 52px) clamp(20px, 6vw, 52px)",
+          padding: "clamp(20px, 4vw, 36px) clamp(16px, 4vw, 40px)",
           position: "relative", zIndex: 2,
           textAlign: "center",
         }}>
@@ -57,7 +58,7 @@ export function Detalles() {
           }}>Detalles</h2>
           <div style={{
             display: "flex", alignItems: "center",
-            justifyContent: "center", gap: "12px", marginBottom: "32px",
+            justifyContent: "center", gap: "12px", marginBottom: "20px",
           }}>
             <div style={{ height: "1px", width: "60px", background: "linear-gradient(to right, transparent, #c9a96e)" }} />
             <span style={{ color: "#c9a96e", fontSize: "10px" }}>✦</span>
@@ -70,8 +71,8 @@ export function Detalles() {
             fontStyle: "italic",
             fontSize: "clamp(14px, 2.2vw, 17px)",
             color: "#7a6040",
-            lineHeight: 2.0,
-            margin: "0 0 36px",
+            lineHeight: 1.5,
+            margin: "0 0 20px",
           }}>
             Tu presencia es nuestro mejor regalo.<br /><br />
             Si deseas tener un gesto adicional,<br />
@@ -83,7 +84,7 @@ export function Detalles() {
 
           {/* Bank details */}
           <div style={{
-            marginBottom: "24px",
+            marginBottom: "12px",
             padding: "20px 24px",
             border: "1px solid #d0c0a0",
             borderRadius: "2px",
@@ -95,14 +96,14 @@ export function Detalles() {
               letterSpacing: "3px",
               color: "#c9a96e",
               textTransform: "uppercase",
-              margin: "0 0 14px",
+              margin: "0 0 10px",
             }}>Datos bancarios</p>
             <div style={{
               fontFamily: "'Cormorant Upright', serif",
               fontStyle: "italic",
               fontSize: "clamp(13px, 2vw, 15px)",
               color: "#7a6040",
-              lineHeight: 2.0,
+              lineHeight: 1.5,
             }}>
               <p style={{ margin: 0 }}>No. de cuenta: <strong style={{ fontWeight: 500 }}>64050881961</strong></p>
               <p style={{ margin: 0 }}>María de los Ángeles Raga</p>
@@ -115,7 +116,7 @@ export function Detalles() {
           {/* Gold divider */}
           <div style={{
             display: "flex", alignItems: "center",
-            justifyContent: "center", gap: "12px", marginBottom: "28px",
+            justifyContent: "center", gap: "12px", marginBottom: "18px",
           }}>
             <div style={{ height: "1px", width: "40px", background: "linear-gradient(to right, transparent, #c9a96e)" }} />
             <span style={{ color: "#c9a96e", fontSize: "10px" }}>✦</span>
@@ -130,7 +131,7 @@ export function Detalles() {
             border: "1px solid #d0c0a0",
             borderRadius: "4px",
             boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
-            marginBottom: "16px",
+            marginBottom: "12px",
           }}>
             <img
               src="/qr.jpeg"
