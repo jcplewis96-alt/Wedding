@@ -88,7 +88,9 @@ export function Detalles() {
               border: "1px solid #d0c0a0",
               borderRadius: "2px",
               background: "rgba(255,255,255,0.5)",
-              textAlign: "left",
+              textAlign: "center",
+              maxWidth: "260px",
+              margin: "0 auto 14px",
             }}>
               <p style={{
                 fontFamily: "'Cormorant Upright', serif",
