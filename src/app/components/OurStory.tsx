@@ -64,7 +64,7 @@ export function OurStory() {
               fontStyle: "italic",
               fontSize: "clamp(13px, 1.8vw, 16px)",
               color: "#8B6F47",
-              marginTop: "12px",
+              marginTop: "8px",
               letterSpacing: "2px",
             }}>18 de Agosto de 2018</p>
           </FadeIn>
@@ -75,12 +75,12 @@ export function OurStory() {
       <div style={{
         maxWidth: "860px",
         margin: "0 auto",
-        padding: "clamp(48px, 8vw, 80px) clamp(20px, 6vw, 40px)",
+        padding: "clamp(32px, 5vw, 56px) clamp(20px, 6vw, 40px)",
       }}>
 
         {/* Moment 1 */}
         <FadeIn direction="up" duration={900} delay={0}>
-          <div style={{ textAlign: "center", marginBottom: "56px" }}>
+          <div style={{ textAlign: "center", marginBottom: "36px" }}>
             <div style={{ marginBottom: "12px" }}>
               <span style={{ color: "#c9a96e", fontSize: "20px" }}>✦</span>
             </div>
@@ -96,7 +96,7 @@ export function OurStory() {
               fontStyle: "italic",
               fontSize: "clamp(15px, 2vw, 18px)",
               color: "#7a6040",
-              lineHeight: 2.0,
+              lineHeight: 1.6,
               margin: 0,
               maxWidth: "680px",
               marginLeft: "auto", marginRight: "auto",
@@ -115,7 +115,7 @@ export function OurStory() {
           <div style={{
             display: "flex", alignItems: "center",
             justifyContent: "center", gap: "16px",
-            marginBottom: "56px",
+            marginBottom: "36px",
           }}>
             <div style={{ height: "1px", flex: 1, maxWidth: "120px", background: "linear-gradient(to right, transparent, #c9a96e)" }} />
             <span style={{ color: "#c9a96e", fontSize: "10px" }}>✦</span>
@@ -127,7 +127,7 @@ export function OurStory() {
 
         {/* Moment 2 */}
         <FadeIn direction="up" duration={900} delay={100}>
-          <div style={{ textAlign: "center", marginBottom: "56px" }}>
+          <div style={{ textAlign: "center", marginBottom: "36px" }}>
             <div style={{ marginBottom: "12px" }}>
               <span style={{ color: "#c9a96e", fontSize: "20px" }}>✦</span>
             </div>
@@ -143,7 +143,7 @@ export function OurStory() {
               fontStyle: "italic",
               fontSize: "clamp(15px, 2vw, 18px)",
               color: "#7a6040",
-              lineHeight: 2.0,
+              lineHeight: 1.6,
               margin: 0,
               maxWidth: "680px",
               marginLeft: "auto", marginRight: "auto",
@@ -161,7 +161,7 @@ export function OurStory() {
           <div style={{
             margin: "0 auto 56px",
             maxWidth: "640px",
-            padding: "clamp(24px, 4vw, 40px) clamp(28px, 5vw, 52px)",
+            padding: "clamp(16px, 3vw, 28px) clamp(28px, 5vw, 52px)",
             borderLeft: "3px solid #c9a96e",
             borderRight: "3px solid #c9a96e",
             textAlign: "center",
@@ -183,7 +183,7 @@ export function OurStory() {
               fontStyle: "italic",
               fontSize: "clamp(16px, 2.2vw, 20px)",
               color: "#8B6F47",
-              lineHeight: 1.9,
+              lineHeight: 1.6,
               margin: 0,
               position: "relative",
               zIndex: 1,
@@ -209,7 +209,7 @@ export function OurStory() {
           <div style={{
             display: "flex", alignItems: "center",
             justifyContent: "center", gap: "16px",
-            marginBottom: "56px",
+            marginBottom: "36px",
           }}>
             <div style={{ height: "1px", flex: 1, maxWidth: "120px", background: "linear-gradient(to right, transparent, #c9a96e)" }} />
             <span style={{ color: "#c9a96e", fontSize: "10px" }}>✦</span>
@@ -221,7 +221,7 @@ export function OurStory() {
 
         {/* Moment 3 */}
         <FadeIn direction="up" duration={900} delay={100}>
-          <div style={{ textAlign: "center", marginBottom: "56px" }}>
+          <div style={{ textAlign: "center", marginBottom: "36px" }}>
             <div style={{ marginBottom: "12px" }}>
               <span style={{ color: "#c9a96e", fontSize: "20px" }}>✦</span>
             </div>
@@ -237,7 +237,7 @@ export function OurStory() {
               fontStyle: "italic",
               fontSize: "clamp(15px, 2vw, 18px)",
               color: "#7a6040",
-              lineHeight: 2.0,
+              lineHeight: 1.6,
               margin: 0,
               maxWidth: "680px",
               marginLeft: "auto", marginRight: "auto",
@@ -253,7 +253,7 @@ export function OurStory() {
 
         {/* Closing signature */}
         <FadeIn direction="up" duration={900} delay={150}>
-          <div style={{ textAlign: "center", paddingTop: "8px" }}>
+          <div style={{ textAlign: "center", paddingTop: "0px" }}>
             <div style={{
               display: "flex", alignItems: "center",
               justifyContent: "center", gap: "16px",
