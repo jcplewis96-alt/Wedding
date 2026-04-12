@@ -10,8 +10,10 @@ import { Gallery } from "./components/Gallery";
 import { RSVP } from "./components/RSVP";
 import { Footer } from "./components/Footer";
 import { Toaster } from "./components/ui/sonner";
+import { useGuest } from "./hooks/useGuest";
 
 export default function App() {
+  const { guest } = useGuest();
   const splashRef    = useRef<HTMLDivElement>(null);
   const sealRef      = useRef<HTMLDivElement>(null);
   const textRef      = useRef<HTMLDivElement>(null);
@@ -207,13 +209,9 @@ export default function App() {
                   fontSize: "clamp(18px, 4vw, 28px)",
                   lineHeight: 1.4,
                 }}>
-                  {(() => {
-                    const p = new URLSearchParams(window.location.search);
-                    const nombre = p.get("invitado")?.replace(/-/g, " ");
-                    const cupos  = p.get("cupos");
-                    if (nombre) return `${nombre}${cupos ? ` (${cupos})` : ""}`;
-                    return "María de los Ángeles & Juan Carlos";
-                  })()}
+                  {guest
+                    ? `${guest.invitado}${guest.cupos > 0 ? ` (${guest.cupos})` : ""}`
+                    : "María de los Ángeles & Juan Carlos"}
                 </div>
               </div>
             </div>
