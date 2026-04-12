@@ -205,9 +205,17 @@ export default function App() {
               <div style={{ color: "#5a3e20", textAlign: "center", padding: "16px", position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <div style={{
                   fontFamily: "'Great Vibes', cursive",
-                  fontSize: "28px",
+                  fontSize: "clamp(18px, 4vw, 28px)",
                   lineHeight: 1.4,
-                }}>Sr. Jaime Ahumada y Señora (2)</div>
+                }}>
+                  {(() => {
+                    const p = new URLSearchParams(window.location.search);
+                    const nombre = p.get("invitado")?.replace(/-/g, " ");
+                    const cupos  = p.get("cupos");
+                    if (nombre) return `${nombre}${cupos ? ` (${cupos})` : ""}`;
+                    return "María de los Ángeles & Juan Carlos";
+                  })()}
+                </div>
               </div>
             </div>
 
