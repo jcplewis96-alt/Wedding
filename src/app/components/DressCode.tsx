@@ -3,11 +3,10 @@ export function DressCode() {
   return (
     <section
       style={{
-        minHeight: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "60px 20px",
+        padding: "80px 20px",
         background: "#e8e2d8",
       }}
     >
