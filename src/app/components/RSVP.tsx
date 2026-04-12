@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useGuest } from "../hooks/useGuest";
 import { FadeIn } from "./FadeIn";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbynJ43RpD1qLMM3xRLYXPgWc901_wjDEcNfSAJcUPICIQNZfUUVQIx_Di3xMjFUFIwBdg/exec";
-const TOKEN = "boda-juma-2026-secret";
+const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL as string;
+const TOKEN = import.meta.env.VITE_SECRET_TOKEN as string;
 
 export function RSVP() {
   const { guest, loading, notFound } = useGuest();
