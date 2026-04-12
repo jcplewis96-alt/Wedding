@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useGuest } from "../hooks/useGuest";
 import { FadeIn } from "./FadeIn";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzKsuONKHIOp8g6F3FJFX4fUlru2UZpmN4BPDLPueN2rMvZYrwqpm7roe7yIRb5pjxlgw/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzw2QpjAEAr6xFQ9cByFUFeVvcuhTSiC-JCF0r1QkxqQctR_5jsPYtPlcf1fFo7o8V1Jw/exec";
 
 export function RSVP() {
   const { guest, loading, notFound } = useGuest();
@@ -11,7 +11,8 @@ export function RSVP() {
 
   const [confirma,    setConfirma]    = useState<"si"|"no"|"">("");
   const [personas,    setPersonas]    = useState(cupos);
-  const [transporte,  setTransporte]  = useState<"si"|"no"|"">("");
+  const [transporteIda,    setTransporteIda]    = useState<"si"|"no"|"">("");
+  const [transporteVuelta, setTransporteVuelta] = useState<"si"|"no"|"12"|"2"|"">("");
   const [alimenticia, setAlimenticia] = useState("");
   const [mensaje,     setMensaje]     = useState("");
   const [estado,      setEstado]      = useState<"idle"|"sending"|"ok"|"error">("idle");
@@ -33,7 +34,8 @@ export function RSVP() {
           cupos,
           confirma:    confirma === "si" ? "Confirma asistencia" : "No puede asistir",
           personas:    confirma === "si" ? personas : 0,
-          transporte:  confirma === "si" ? (transporte === "si" ? "Sí" : transporte === "no" ? "No" : "No respondió") : "N/A",
+          transporteIda:    confirma === "si" ? (transporteIda === "si" ? "Sí" : transporteIda === "no" ? "No" : "No respondió") : "N/A",
+          transporteVuelta: confirma === "si" ? (transporteVuelta || "No respondió") : "N/A",
           alimenticia: alimenticia || "Ninguna",
           mensaje,
         }),
@@ -235,19 +237,47 @@ export function RSVP() {
                     }}>Máximo {cupos} {cupos === 1 ? "persona" : "personas"}</p>
                   </div>
 
-                  {/* Q3 — Transporte */}
+                  {/* Q3 — Transporte ida */}
                   <div>
                     <p style={{
                       fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
                       fontSize: "clamp(12px, 2vw, 14px)", color: "#a89070",
-                      letterSpacing: "2px", margin: "0 0 8px",
+                      letterSpacing: "2px", margin: "0 0 4px",
                       textTransform: "uppercase", textAlign: "center",
                     }}>¿Usarías el transporte de Bogotá a la Hacienda?</p>
+                    <p style={{
+                      fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
+                      fontSize: "clamp(11px, 1.8vw, 13px)", color: "#c0a880",
+                      margin: "0 0 10px", textAlign: "center",
+                    }}>Punto de partida: Hotel W, Cra 9 # 115-30</p>
                     <div style={{ display: "flex", gap: "10px" }}>
-                      <button className={`rsvp-option ${transporte === "si" ? "selected-si" : ""}`}
-                        onClick={() => setTransporte("si")}>Sí, lo usaría</button>
-                      <button className={`rsvp-option ${transporte === "no" ? "selected-no" : ""}`}
-                        onClick={() => setTransporte("no")}>No, gracias</button>
+                      <button className={`rsvp-option ${transporteIda === "si" ? "selected-si" : ""}`}
+                        onClick={() => setTransporteIda("si")}>Sí, lo usaría</button>
+                      <button className={`rsvp-option ${transporteIda === "no" ? "selected-no" : ""}`}
+                        onClick={() => setTransporteIda("no")}>No, gracias</button>
+                    </div>
+                  </div>
+
+                  {/* Q4 — Transporte vuelta */}
+                  <div>
+                    <p style={{
+                      fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
+                      fontSize: "clamp(12px, 2vw, 14px)", color: "#a89070",
+                      letterSpacing: "2px", margin: "0 0 4px",
+                      textTransform: "uppercase", textAlign: "center",
+                    }}>¿Usarías el transporte de la Hacienda a Bogotá?</p>
+                    <p style={{
+                      fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
+                      fontSize: "clamp(11px, 1.8vw, 13px)", color: "#c0a880",
+                      margin: "0 0 10px", textAlign: "center",
+                    }}>Selecciona el horario de salida</p>
+                    <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+                      <button className={`rsvp-option ${transporteVuelta === "12" ? "selected-si" : ""}`}
+                        onClick={() => setTransporteVuelta("12")}>12:00 AM</button>
+                      <button className={`rsvp-option ${transporteVuelta === "2" ? "selected-si" : ""}`}
+                        onClick={() => setTransporteVuelta("2")}>2:00 AM</button>
+                      <button className={`rsvp-option ${transporteVuelta === "no" ? "selected-no" : ""}`}
+                        onClick={() => setTransporteVuelta("no")}>No, gracias</button>
                     </div>
                   </div>
 
