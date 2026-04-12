@@ -148,7 +148,12 @@ export function RSVP() {
                   fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
                   fontSize: "clamp(11px, 1.8vw, 13px)", color: "#a89070",
                   margin: "4px 0 0", letterSpacing: "1px",
-                }}>Cupos asignados: {cupos}</p>
+                }}>Cupos asignados: <strong style={{
+                  fontFamily: "'Great Vibes', cursive",
+                  fontSize: "clamp(22px, 3.5vw, 28px)",
+                  color: "#b8902a", fontWeight: 400,
+                  verticalAlign: "middle",
+                }}>{cupos}</strong></p>
               </div>
             )}
 
