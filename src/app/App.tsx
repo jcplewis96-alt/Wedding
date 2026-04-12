@@ -626,9 +626,9 @@ export default function App() {
       <div id="detalles"><Detalles /></div>
       <Wave topColor="#faf6ed"   bottomColor="#ffffff"  />
       <div id="historia"><OurStory /></div>
-      <Wave topColor="#ffffff"   bottomColor="#ffffff"  />
+      <Wave topColor="#ffffff"   bottomColor="#f8fafc"  />
       <Gallery />
-      <Wave topColor="#ffffff"   bottomColor="#faf6ed"  flip />
+      <Wave topColor="#f8fafc"   bottomColor="#faf6ed"  />
       <div id="rsvp"><RSVP /></div>
       <Wave topColor="#faf6ed"   bottomColor="#2a1a08"  />
       <Footer />
