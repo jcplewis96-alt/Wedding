@@ -8,7 +8,6 @@ import { Detalles } from "./components/Detalles";
 import { OurStory } from "./components/OurStory";
 import { Gallery } from "./components/Gallery";
 import { RSVP } from "./components/RSVP";
-import { Travel } from "./components/Travel";
 import { Footer } from "./components/Footer";
 import { Toaster } from "./components/ui/sonner";
 
@@ -631,9 +630,6 @@ export default function App() {
       <Gallery />
       <Wave topColor="#ffffff"   bottomColor="#ffffff"  flip />
       <div id="rsvp"><RSVP /></div>
-      <Wave topColor="#ffffff"   bottomColor="#e8e2d8"  />
-      <Travel />
-      <Wave topColor="#e8e2d8"   bottomColor="#3a2810"  />
       <Footer />
       <Toaster />
     </div>
