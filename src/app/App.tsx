@@ -210,7 +210,21 @@ export default function App() {
                   lineHeight: 1.4,
                 }}>
                   {guestLoading
-                    ? ""
+                    ? <span style={{
+                        display: "inline-flex", gap: "6px",
+                        alignItems: "center", justifyContent: "center",
+                        height: "1.2em", verticalAlign: "middle",
+                      }}>
+                        <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0s",
+                          width: "8px", height: "8px", borderRadius: "50%",
+                          background: "#c9a96e", display: "inline-block" }} />
+                        <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0.2s",
+                          width: "8px", height: "8px", borderRadius: "50%",
+                          background: "#c9a96e", display: "inline-block" }} />
+                        <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0.4s",
+                          width: "8px", height: "8px", borderRadius: "50%",
+                          background: "#c9a96e", display: "inline-block" }} />
+                      </span>
                     : guest
                       ? `${guest.invitado}${guest.cupos > 0 ? ` (${guest.cupos})` : ""}`
                       : "María de los Ángeles & Juan Carlos"}
