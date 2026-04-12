@@ -1,21 +1,19 @@
 import { useState, useEffect } from "react";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzw2QpjAEAr6xFQ9cByFUFeVvcuhTSiC-JCF0r1QkxqQctR_5jsPYtPlcf1fFo7o8V1Jw/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbynJ43RpD1qLMM3xRLYXPgWc901_wjDEcNfSAJcUPICIQNZfUUVQIx_Di3xMjFUFIwBdg/exec";
+const TOKEN = "boda-juma-2026-secret";
 
 export interface Guest {
   invitado: string;
   cupos: number;
 }
 
-// Module-level cache so fetch only happens once per page load
 let cache: Guest | null | "notfound" = null;
 let fetchPromise: Promise<void> | null = null;
 
-// Kick off the fetch IMMEDIATELY when the module loads (before React mounts)
-// This runs in parallel with the splash/envelope animation
 const _codigo = new URLSearchParams(window.location.search).get("i") || "";
 if (_codigo) {
-  fetchPromise = fetch(`${SCRIPT_URL}?i=${_codigo}`)
+  fetchPromise = fetch(`${SCRIPT_URL}?i=${_codigo}&token=${TOKEN}`)
     .then(r => r.json())
     .then(d => {
       cache = d.found
@@ -29,7 +27,6 @@ export function useGuest(): { guest: Guest | null; loading: boolean; notFound: b
   const params = new URLSearchParams(window.location.search);
   const codigo = params.get("i") || "";
 
-  // No code in URL — never load, show default text immediately
   const [guest,    setGuest]    = useState<Guest | null>(null);
   const [loading,  setLoading]  = useState(!!codigo);
   const [notFound, setNotFound] = useState(false);
@@ -37,7 +34,6 @@ export function useGuest(): { guest: Guest | null; loading: boolean; notFound: b
   useEffect(() => {
     if (!codigo) { setLoading(false); return; }
 
-    // If already cached, use it immediately with no flash
     if (cache !== null) {
       if (cache === "notfound") { setNotFound(true); }
       else { setGuest(cache); }
@@ -45,7 +41,16 @@ export function useGuest(): { guest: Guest | null; loading: boolean; notFound: b
       return;
     }
 
-    // fetchPromise already started at module load time — just wait for it
+    if (!fetchPromise) {
+      fetchPromise = fetch(`${SCRIPT_URL}?i=${codigo}&token=${TOKEN}`)
+        .then(r => r.json())
+        .then(d => {
+          cache = d.found
+            ? { invitado: d.nombre, cupos: Number(d.cupos) }
+            : "notfound";
+        })
+        .catch(() => { cache = "notfound"; });
+    }
 
     fetchPromise.then(() => {
       if (cache === "notfound") { setNotFound(true); }
