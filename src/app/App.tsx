@@ -630,7 +630,7 @@ export default function App() {
       <Gallery />
       <Wave topColor="#ffffff"   bottomColor="#ffffff"  flip />
       <div id="rsvp"><RSVP /></div>
-      <Wave topColor="#faf6ed"   bottomColor="#2a1a08"  />
+      <Wave topColor="#ffffff"   bottomColor="#2a1a08"  />
       <Footer />
       <Toaster />
     </div>
