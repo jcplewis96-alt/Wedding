@@ -14,7 +14,7 @@ export function Gallery() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <section style={{ background: "#f8fafc", padding: "60px 20px" }}>
+    <section style={{ background: "#e8e2d8", padding: "60px 20px" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Upright:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
