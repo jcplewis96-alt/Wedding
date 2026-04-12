@@ -12,7 +12,7 @@ export function Footer() {
 
   return (
     <footer style={{
-      background: "linear-gradient(135deg, #2a1a08 0%, #3a2810 50%, #2a1a08 100%)",
+      background: "#2a1a08",
       color: "white",
       padding: "clamp(48px, 8vw, 80px) 20px clamp(32px, 5vw, 48px)",
       textAlign: "center",
