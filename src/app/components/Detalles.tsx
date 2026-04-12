@@ -8,7 +8,7 @@ export function Detalles() {
         alignItems: "center",
         justifyContent: "center",
         padding: "60px 20px",
-        background: "linear-gradient(135deg, #faf6ed 0%, #f5f0e4 50%, #faf6ed 100%)",
+        background: "#faf6ed",
       }}
     >
       <style>{`
