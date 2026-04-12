@@ -1,18 +1,14 @@
 import { FadeIn } from "./FadeIn";
 
 export function Card() {
-  const params   = new URLSearchParams(window.location.search);
-  const invitado = params.get("invitado")?.replace(/-/g, " ") || "";
-  const cupos    = params.get("cupos") || "";
 
   return (
     <section
       style={{
-        minHeight: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "60px 20px",
+        padding: "80px 20px",
         background: "#f0ebe2",
       }}
     >
@@ -144,26 +140,6 @@ export function Card() {
               <span style={{ color: "#c9a96e", fontSize: "12px" }}>✦</span>
               <div style={{ height: "1px", width: "80px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
             </div>
-
-            {/* Guest name & seats — only shown if URL has params */}
-            {invitado && (
-              <div style={{ marginBottom: "24px" }}>
-                <p style={{
-                  fontFamily: "'Great Vibes', cursive",
-                  fontSize: "clamp(26px, 4.5vw, 38px)",
-                  color: "#b8902a", margin: "0 0 4px", lineHeight: 1.2,
-                }}>{invitado}</p>
-                {cupos && (
-                  <p style={{
-                    fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                    fontSize: "clamp(12px, 1.8vw, 14px)", color: "#a89070",
-                    letterSpacing: "2px", margin: 0,
-                  }}>
-                    Cupos asignados: {cupos}
-                  </p>
-                )}
-              </div>
-            )}
 
             {/* City and date */}
             <p style={{
