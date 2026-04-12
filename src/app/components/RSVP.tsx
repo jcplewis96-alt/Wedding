@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FadeIn } from "./FadeIn";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz9ULCEZBNtX6yLtW9O8bgdfUJKQXof5JI7a59G5yYL_T-rBA1aBMaNO8uvNY-akDcLKA/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxerPsJ0MgY6GBNzv-zsMl56Drjuc0DHexiJu9DjTyRNo4N8ZcGAg1ZjRG8i3HM9FrQqw/exec";
 
 export function RSVP() {
   const params   = new URLSearchParams(window.location.search);
