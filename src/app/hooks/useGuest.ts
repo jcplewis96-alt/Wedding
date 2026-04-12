@@ -11,6 +11,20 @@ export interface Guest {
 let cache: Guest | null | "notfound" = null;
 let fetchPromise: Promise<void> | null = null;
 
+// Kick off the fetch IMMEDIATELY when the module loads (before React mounts)
+// This runs in parallel with the splash/envelope animation
+const _codigo = new URLSearchParams(window.location.search).get("i") || "";
+if (_codigo) {
+  fetchPromise = fetch(`${SCRIPT_URL}?i=${_codigo}`)
+    .then(r => r.json())
+    .then(d => {
+      cache = d.found
+        ? { invitado: d.nombre, cupos: Number(d.cupos) }
+        : "notfound";
+    })
+    .catch(() => { cache = "notfound"; });
+}
+
 export function useGuest(): { guest: Guest | null; loading: boolean; notFound: boolean } {
   const params = new URLSearchParams(window.location.search);
   const codigo = params.get("i") || "";
@@ -31,19 +45,7 @@ export function useGuest(): { guest: Guest | null; loading: boolean; notFound: b
       return;
     }
 
-    // Deduplicate: if a fetch is already in flight, wait for it
-    if (!fetchPromise) {
-      fetchPromise = fetch(`${SCRIPT_URL}?i=${codigo}`)
-        .then(r => r.json())
-        .then(d => {
-          if (d.found) {
-            cache = { invitado: d.nombre, cupos: Number(d.cupos) };
-          } else {
-            cache = "notfound";
-          }
-        })
-        .catch(() => { cache = "notfound"; });
-    }
+    // fetchPromise already started at module load time — just wait for it
 
     fetchPromise.then(() => {
       if (cache === "notfound") { setNotFound(true); }
