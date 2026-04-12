@@ -1,19 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useGuest } from "../hooks/useGuest";
 import { FadeIn } from "./FadeIn";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxerPsJ0MgY6GBNzv-zsMl56Drjuc0DHexiJu9DjTyRNo4N8ZcGAg1ZjRG8i3HM9FrQqw/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzKsuONKHIOp8g6F3FJFX4fUlru2UZpmN4BPDLPueN2rMvZYrwqpm7roe7yIRb5pjxlgw/exec";
 
 export function RSVP() {
-  const params   = new URLSearchParams(window.location.search);
-  const invitado = params.get("invitado")?.replace(/-/g, " ") || "";
-  const cupos    = parseInt(params.get("cupos") || "1");
+  const { guest, loading, notFound } = useGuest();
+  const invitado = guest?.invitado || "";
+  const cupos    = guest?.cupos || 1;
 
-  const [confirma,     setConfirma]     = useState<"si" | "no" | "">("");
-  const [personas,     setPersonas]     = useState(cupos);
-  const [transporte,   setTransporte]   = useState<"si" | "no" | "">("");
-  const [alimenticia,  setAlimenticia]  = useState("");
-  const [mensaje,      setMensaje]      = useState("");
-  const [estado,       setEstado]       = useState<"idle" | "sending" | "ok" | "error">("idle");
+  const [confirma,    setConfirma]    = useState<"si"|"no"|"">("");
+  const [personas,    setPersonas]    = useState(cupos);
+  const [transporte,  setTransporte]  = useState<"si"|"no"|"">("");
+  const [alimenticia, setAlimenticia] = useState("");
+  const [mensaje,     setMensaje]     = useState("");
+  const [estado,      setEstado]      = useState<"idle"|"sending"|"ok"|"error">("idle");
+
+  useEffect(() => {
+    if (guest) setPersonas(guest.cupos);
+  }, [guest]);
 
   const handleSubmit = async () => {
     if (!confirma) return;
@@ -40,16 +45,10 @@ export function RSVP() {
   };
 
   return (
-    <section
-      id="rsvp"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "60px 20px",
-        background: "#faf6ed",
-      }}
-    >
+    <section id="rsvp" style={{
+      display: "flex", alignItems: "center", justifyContent: "center",
+      padding: "60px 20px", background: "#faf6ed",
+    }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Upright:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
         .rsvp-option {
@@ -59,9 +58,9 @@ export function RSVP() {
           text-align: center; font-family: 'Cormorant Upright', serif;
           font-style: italic; font-size: clamp(13px, 2vw, 15px); color: #7a6040;
         }
-        .rsvp-option.selected-si  { background: #c9a96e; border-color: #c9a96e; color: #fff; }
-        .rsvp-option.selected-no  { background: #a89070; border-color: #a89070; color: #fff; }
-        .rsvp-option:hover        { border-color: #c9a96e; }
+        .rsvp-option.selected-si { background: #c9a96e; border-color: #c9a96e; color: #fff; }
+        .rsvp-option.selected-no { background: #a89070; border-color: #a89070; color: #fff; }
+        .rsvp-option:hover { border-color: #c9a96e; }
         .rsvp-textarea, .rsvp-input {
           width: 100%; border: 1px solid #d0c0a0;
           background: rgba(255,255,255,0.6); padding: 10px 12px;
@@ -73,9 +72,9 @@ export function RSVP() {
         .rsvp-textarea:focus, .rsvp-input:focus { border-color: #c9a96e; }
         .rsvp-textarea::placeholder, .rsvp-input::placeholder { color: #c0a880; }
         .rsvp-submit {
-          width: 100%; padding: 12px;
-          border: 1px solid #c9a96e; background: transparent;
-          color: #8B6520; font-family: 'Cormorant Upright', serif;
+          width: 100%; padding: 12px; border: 1px solid #c9a96e;
+          background: transparent; color: #8B6520;
+          font-family: 'Cormorant Upright', serif;
           font-size: clamp(12px, 2vw, 14px); letter-spacing: 3px;
           text-transform: uppercase; cursor: pointer;
           transition: all 0.3s ease; border-radius: 2px;
@@ -88,7 +87,7 @@ export function RSVP() {
           cursor: pointer; border-radius: 2px; transition: all 0.2s ease;
           display: flex; align-items: center; justify-content: center;
         }
-        .qty-btn:hover   { background: #c9a96e; color: #fff; }
+        .qty-btn:hover { background: #c9a96e; color: #fff; }
         .qty-btn:disabled { opacity: 0.3; cursor: not-allowed; }
       `}</style>
 
@@ -99,7 +98,6 @@ export function RSVP() {
           padding: "8px",
           boxShadow: "0 20px 80px rgba(0,0,0,0.12), 0 4px 20px rgba(0,0,0,0.06)",
         }}>
-
           <div style={{
             position: "absolute", inset: "8px",
             border: "1px solid #c9a96e", pointerEvents: "none", zIndex: 1,
@@ -131,8 +129,26 @@ export function RSVP() {
               <div style={{ height: "1px", width: "50px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
             </div>
 
-            {/* Guest name */}
-            {invitado && (
+            {/* Loading */}
+            {loading && (
+              <p style={{
+                fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
+                fontSize: "clamp(13px, 2vw, 15px)", color: "#a89070",
+                padding: "24px 0",
+              }}>Cargando tu invitación...</p>
+            )}
+
+            {/* Not found */}
+            {!loading && notFound && (
+              <p style={{
+                fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
+                fontSize: "clamp(13px, 2vw, 15px)", color: "#a89070",
+                padding: "24px 0",
+              }}>No encontramos tu invitación. Verifica el enlace.</p>
+            )}
+
+            {/* Guest info */}
+            {!loading && !notFound && invitado && (
               <div style={{ marginBottom: "20px" }}>
                 <p style={{
                   fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
@@ -151,8 +167,7 @@ export function RSVP() {
                 }}>Cupos asignados: <strong style={{
                   fontFamily: "'Great Vibes', cursive",
                   fontSize: "clamp(22px, 3.5vw, 28px)",
-                  color: "#b8902a", fontWeight: 400,
-                  verticalAlign: "middle",
+                  color: "#b8902a", fontWeight: 400, verticalAlign: "middle",
                 }}>{cupos}</strong></p>
               </div>
             )}
@@ -165,15 +180,13 @@ export function RSVP() {
                   fontFamily: "'Great Vibes', cursive",
                   fontSize: "clamp(28px, 5vw, 38px)",
                   color: "#b8902a", margin: "0 0 8px",
-                }}>
-                  {confirma === "si" ? "¡Nos alegra contar contigo!" : "Gracias por avisarnos"}
-                </p>
+                }}>{confirma === "si" ? "¡Nos alegra contar contigo!" : "Gracias por avisarnos"}</p>
                 <p style={{
                   fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
                   fontSize: "clamp(13px, 2vw, 15px)", color: "#7a6040",
                 }}>Tu respuesta ha sido registrada.</p>
               </div>
-            ) : (
+            ) : !loading && !notFound && (
               <div style={{ display: "flex", flexDirection: "column", gap: "18px", textAlign: "left" }}>
 
                 {/* Q1 — Asistencia */}
@@ -194,7 +207,7 @@ export function RSVP() {
 
                 {confirma === "si" && (<>
 
-                  {/* Q2 — Número de personas */}
+                  {/* Q2 — Personas */}
                   <div>
                     <p style={{
                       fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
@@ -202,10 +215,7 @@ export function RSVP() {
                       letterSpacing: "2px", margin: "0 0 8px",
                       textTransform: "uppercase", textAlign: "center",
                     }}>Número de personas</p>
-                    <div style={{
-                      display: "flex", alignItems: "center",
-                      justifyContent: "center", gap: "16px",
-                    }}>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "16px" }}>
                       <button className="qty-btn"
                         onClick={() => setPersonas(p => Math.max(1, p - 1))}
                         disabled={personas <= 1}>−</button>
@@ -241,7 +251,7 @@ export function RSVP() {
                     </div>
                   </div>
 
-                  {/* Q4 — Restricción alimenticia */}
+                  {/* Q4 — Restricción */}
                   <div>
                     <p style={{
                       fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
@@ -277,7 +287,6 @@ export function RSVP() {
                   />
                 </div>
 
-                {/* Submit */}
                 <button
                   className="rsvp-submit"
                   onClick={handleSubmit}
@@ -295,7 +304,6 @@ export function RSVP() {
 
               </div>
             )}
-
           </div>
         </div>
       </FadeIn>
