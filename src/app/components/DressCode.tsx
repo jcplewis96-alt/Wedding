@@ -8,7 +8,7 @@ export function DressCode() {
         alignItems: "center",
         justifyContent: "center",
         padding: "60px 20px",
-        background: "linear-gradient(135deg, #e8e2d8 0%, #e0d9ce 50%, #e8e2d8 100%)",
+        background: "#e8e2d8",
       }}
     >
       <style>{`
