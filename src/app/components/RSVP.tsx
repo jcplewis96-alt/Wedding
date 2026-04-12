@@ -58,7 +58,7 @@ export function RSVP() {
           border: 1px solid #d0c0a0; border-radius: 2px;
           padding: 10px 16px; background: transparent; width: 100%;
           text-align: center; font-family: 'Cormorant Upright', serif;
-          font-style: italic; font-size: clamp(15px, 2.5vw, 17px); color: #7a6040;
+          font-style: italic; font-size: clamp(15px, 2.5vw, 17px); color: #5a3e20;
         }
         .rsvp-option.selected-si { background: #c9a96e; border-color: #c9a96e; color: #fff; }
         .rsvp-option.selected-no { background: #a89070; border-color: #a89070; color: #fff; }
@@ -67,7 +67,7 @@ export function RSVP() {
           width: 100%; border: 1px solid #d0c0a0;
           background: rgba(255,255,255,0.6); padding: 10px 12px;
           font-family: 'Cormorant Upright', serif; font-style: italic;
-          font-size: clamp(15px, 2.5vw, 17px); color: #7a6040;
+          font-size: clamp(15px, 2.5vw, 17px); color: #5a3e20;
           outline: none; border-radius: 2px; box-sizing: border-box;
         }
         .rsvp-textarea { resize: none; }
@@ -154,7 +154,7 @@ export function RSVP() {
               <div style={{ marginBottom: "20px" }}>
                 <p style={{
                   fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                  fontSize: "clamp(13px, 2vw, 15px)", color: "#a89070",
+                  fontSize: "clamp(13px, 2vw, 15px)", color: "#5a3e20",
                   letterSpacing: "2px", margin: "0 0 4px",
                 }}>Invitado</p>
                 <p style={{
@@ -164,7 +164,7 @@ export function RSVP() {
                 }}>{invitado}</p>
                 <p style={{
                   fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                  fontSize: "clamp(11px, 1.8vw, 13px)", color: "#a89070",
+                  fontSize: "clamp(13px, 2vw, 15px)", color: "#7a6040",
                   margin: "4px 0 0", letterSpacing: "1px",
                 }}>Cupos asignados: <strong style={{
                   fontFamily: "'Great Vibes', cursive",
@@ -195,7 +195,7 @@ export function RSVP() {
                 <div>
                   <p style={{
                     fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                    fontSize: "clamp(14px, 2.5vw, 16px)", color: "#a89070",
+                    fontSize: "clamp(14px, 2.5vw, 16px)", color: "#5a3e20",
                     letterSpacing: "2px", margin: "0 0 8px",
                     textTransform: "uppercase", textAlign: "center",
                   }}>¿Confirmas tu asistencia?</p>
@@ -232,7 +232,7 @@ export function RSVP() {
                     </div>
                     <p style={{
                       fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                      fontSize: "clamp(13px, 2vw, 15px)", color: "#c0a880",
+                      fontSize: "clamp(13px, 2vw, 15px)", color: "#8B6F47",
                       margin: "6px 0 0", textAlign: "center",
                     }}>Máximo {cupos} {cupos === 1 ? "persona" : "personas"}</p>
                   </div>
@@ -247,7 +247,7 @@ export function RSVP() {
                     }}>¿Usarías el transporte de Bogotá a la Hacienda?</p>
                     <p style={{
                       fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                      fontSize: "clamp(12px, 2vw, 14px)", color: "#c0a880",
+                      fontSize: "clamp(12px, 2vw, 14px)", color: "#8B6F47",
                       margin: "0 0 10px", textAlign: "center",
                     }}>Punto de partida: Hotel W, Cra 9 # 115-30<br/>Hora de salida: 2:15 PM</p>
                     <div style={{ display: "flex", gap: "10px" }}>
@@ -268,7 +268,7 @@ export function RSVP() {
                     }}>¿Usarías el transporte de la Hacienda a Bogotá?</p>
                     <p style={{
                       fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                      fontSize: "clamp(11px, 1.8vw, 13px)", color: "#c0a880",
+                      fontSize: "clamp(11px, 1.8vw, 13px)", color: "#8B6F47",
                       margin: "0 0 10px", textAlign: "center",
                     }}>Selecciona el horario de salida</p>
                     <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
@@ -304,7 +304,7 @@ export function RSVP() {
                 <div>
                   <p style={{
                     fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                    fontSize: "clamp(14px, 2.5vw, 16px)", color: "#a89070",
+                    fontSize: "clamp(14px, 2.5vw, 16px)", color: "#5a3e20",
                     letterSpacing: "2px", margin: "0 0 8px",
                     textTransform: "uppercase", textAlign: "center",
                   }}>Mensaje para los novios</p>
