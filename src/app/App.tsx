@@ -640,19 +640,19 @@ export default function App() {
       {/* Main content */}
       <Navbar />
       <div id="hero"><Hero /></div>
-      <Wave topColor="#000000"   bottomColor="#f0ebe2"  />
+      <div style={{ background: "#f0ebe2" }}><Wave color="#f0ebe2" /></div>
       <div id="invitacion"><Card /></div>
-      <Wave topColor="#f0ebe2"   bottomColor="#e8e2d8"  />
+      <div style={{ background: "#f0ebe2" }}><Wave color="#e8e2d8" /></div>
       <div id="dresscode"><DressCode /></div>
-      <Wave topColor="#e8e2d8"   bottomColor="#faf6ed"  />
+      <div style={{ background: "#e8e2d8" }}><Wave color="#faf6ed" /></div>
       <div id="detalles"><Detalles /></div>
-      <Wave topColor="#faf6ed"   bottomColor="#ffffff"  />
+      <div style={{ background: "#faf6ed" }}><Wave color="#ffffff" /></div>
       <div id="historia"><OurStory /></div>
-      <Wave topColor="#ffffff"   bottomColor="#f8fafc"  />
+      <div style={{ background: "#ffffff" }}><Wave color="#f8fafc" /></div>
       <div id="galeria"><Gallery /></div>
-      <Wave topColor="#f8fafc"   bottomColor="#faf6ed"  />
+      <div style={{ background: "#f8fafc" }}><Wave color="#faf6ed" /></div>
       <div id="rsvp"><RSVP /></div>
-      <Wave topColor="#faf6ed"   bottomColor="#2a1a08"  />
+      <div style={{ background: "#faf6ed" }}><Wave color="#2a1a08" /></div>
       <Footer />
       <Toaster />
     </div>
