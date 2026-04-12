@@ -22,10 +22,10 @@ export function OurStory() {
             display: "block",
           }}
         />
-        {/* Champagne overlay */}
+        {/* Champagne overlay — fully opaque at top to blend with wave */}
         <div style={{
           position: "absolute", inset: 0,
-          background: "linear-gradient(to bottom, rgba(240,235,226,0.15) 0%, rgba(240,235,226,0.55) 60%, rgba(255,255,255,1) 100%)",
+          background: "linear-gradient(to bottom, rgba(250,246,237,1) 0%, rgba(240,235,226,0.4) 25%, rgba(240,235,226,0.2) 60%, rgba(255,255,255,1) 100%)",
         }} />
 
         {/* Title over photo */}
