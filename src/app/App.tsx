@@ -13,7 +13,7 @@ import { Toaster } from "./components/ui/sonner";
 import { useGuest } from "./hooks/useGuest";
 
 export default function App() {
-  const { guest } = useGuest();
+  const { guest, loading: guestLoading } = useGuest();
   const splashRef    = useRef<HTMLDivElement>(null);
   const sealRef      = useRef<HTMLDivElement>(null);
   const textRef      = useRef<HTMLDivElement>(null);
@@ -209,9 +209,11 @@ export default function App() {
                   fontSize: "clamp(18px, 4vw, 28px)",
                   lineHeight: 1.4,
                 }}>
-                  {guest
-                    ? `${guest.invitado}${guest.cupos > 0 ? ` (${guest.cupos})` : ""}`
-                    : "María de los Ángeles & Juan Carlos"}
+                  {guestLoading
+                    ? ""
+                    : guest
+                      ? `${guest.invitado}${guest.cupos > 0 ? ` (${guest.cupos})` : ""}`
+                      : "María de los Ángeles & Juan Carlos"}
                 </div>
               </div>
             </div>
