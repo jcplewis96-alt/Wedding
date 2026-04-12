@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { useGuest } from "../hooks/useGuest";
 import { FadeIn } from "./FadeIn";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzw2QpjAEAr6xFQ9cByFUFeVvcuhTSiC-JCF0r1QkxqQctR_5jsPYtPlcf1fFo7o8V1Jw/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbynJ43RpD1qLMM3xRLYXPgWc901_wjDEcNfSAJcUPICIQNZfUUVQIx_Di3xMjFUFIwBdg/exec";
+const TOKEN = "boda-juma-2026-secret";
 
 export function RSVP() {
   const { guest, loading, notFound } = useGuest();
@@ -30,6 +31,7 @@ export function RSVP() {
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          token:       TOKEN,
           invitado:    invitado || "Invitado general",
           cupos,
           confirma:    confirma === "si" ? "Confirma asistencia" : "No puede asistir",
