@@ -9,8 +9,8 @@ export function Wave({ topColor, bottomColor, flip = false }: WaveProps) {
     <div style={{
       position: "relative",
       height: "80px",
-      marginTop: "-1px",
-      marginBottom: "-1px",
+      marginTop: "-2px",
+      marginBottom: "-2px",
       background: topColor,
       overflow: "hidden",
       flexShrink: 0,
