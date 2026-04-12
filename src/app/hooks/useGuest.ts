@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzKsuONKHIOp8g6F3FJFX4fUlru2UZpmN4BPDLPueN2rMvZYrwqpm7roe7yIRb5pjxlgw/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzw2QpjAEAr6xFQ9cByFUFeVvcuhTSiC-JCF0r1QkxqQctR_5jsPYtPlcf1fFo7o8V1Jw/exec";
 
 export interface Guest {
   invitado: string;
