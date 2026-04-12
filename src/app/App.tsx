@@ -211,19 +211,27 @@ export default function App() {
                 }}>
                   {guestLoading
                     ? <span style={{
-                        display: "inline-flex", gap: "6px",
-                        alignItems: "center", justifyContent: "center",
-                        height: "1.2em", verticalAlign: "middle",
+                        display: "inline-flex", flexDirection: "column",
+                        alignItems: "center", justifyContent: "center", gap: "10px",
                       }}>
-                        <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0s",
-                          width: "8px", height: "8px", borderRadius: "50%",
-                          background: "#c9a96e", display: "inline-block" }} />
-                        <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0.2s",
-                          width: "8px", height: "8px", borderRadius: "50%",
-                          background: "#c9a96e", display: "inline-block" }} />
-                        <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0.4s",
-                          width: "8px", height: "8px", borderRadius: "50%",
-                          background: "#c9a96e", display: "inline-block" }} />
+                        <span style={{ display: "inline-flex", gap: "6px", alignItems: "center" }}>
+                          <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0s",
+                            width: "8px", height: "8px", borderRadius: "50%",
+                            background: "#c9a96e", display: "inline-block" }} />
+                          <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0.2s",
+                            width: "8px", height: "8px", borderRadius: "50%",
+                            background: "#c9a96e", display: "inline-block" }} />
+                          <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0.4s",
+                            width: "8px", height: "8px", borderRadius: "50%",
+                            background: "#c9a96e", display: "inline-block" }} />
+                        </span>
+                        <span style={{
+                          fontFamily: "'Cormorant Upright', cursive",
+                          fontSize: "13px",
+                          color: "#a89070",
+                          letterSpacing: "3px",
+                          animation: "textFade 1.8s ease-in-out infinite",
+                        }}>Abriendo tu invitación...</span>
                       </span>
                     : guest
                       ? `${guest.invitado}${guest.cupos > 0 ? ` (${guest.cupos})` : ""}`
@@ -641,7 +649,7 @@ export default function App() {
       <Wave topColor="#faf6ed"   bottomColor="#ffffff"  />
       <div id="historia"><OurStory /></div>
       <Wave topColor="#ffffff"   bottomColor="#f8fafc"  />
-      <Gallery />
+      <div id="galeria"><Gallery /></div>
       <Wave topColor="#f8fafc"   bottomColor="#faf6ed"  />
       <div id="rsvp"><RSVP /></div>
       <Wave topColor="#faf6ed"   bottomColor="#2a1a08"  />
