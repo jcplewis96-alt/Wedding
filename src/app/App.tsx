@@ -646,7 +646,7 @@ export default function App() {
       <div id="dresscode"><DressCode /></div>
       <div style={{ background: "#e8e2d8" }}><Wave color="#faf6ed" /></div>
       <div id="detalles"><Detalles /></div>
-      <div style={{ background: "#faf6ed" }}><Wave color="#ffffff" /></div>
+      <div style={{ background: "#faf6ed" }}><Wave color="#faf6ed" /></div>
       <div id="historia"><OurStory /></div>
       <div style={{ background: "#ffffff" }}><Wave color="#f8fafc" /></div>
       <div id="galeria"><Gallery /></div>
