@@ -47,7 +47,7 @@ export function RSVP() {
         alignItems: "center",
         justifyContent: "center",
         padding: "60px 20px",
-        background: "linear-gradient(135deg, #faf6ed 0%, #f5f0e4 50%, #faf6ed 100%)",
+        background: "linear-gradient(135deg, #ffffff 0%, #faf6ed 50%, #ffffff 100%)",
       }}
     >
       <style>{`
