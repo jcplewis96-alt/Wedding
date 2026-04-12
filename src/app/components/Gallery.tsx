@@ -29,7 +29,7 @@ export function Gallery() {
   ];
 
   return (
-    <section className="py-20 px-4 bg-slate-50">
+    <section className="py-20 px-4" style={{ background: "#f8fafc" }}>
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl text-center mb-16 font-serif">Our Moments</h2>
         
