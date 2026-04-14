@@ -117,7 +117,7 @@ export function Hero() {
         {/* Date */}
         <div className="hero-date" style={{
           fontFamily: "'Cormorant Upright', serif",
-          fontSize: "clamp(1.2rem, 3vw, 1.6rem)",
+          fontSize: "clamp(1.4rem, 3.5vw, 1.8rem)",
           letterSpacing: "4px",
           marginBottom: "0.6rem",
           fontStyle: "italic",
@@ -128,7 +128,7 @@ export function Hero() {
         {/* Place */}
         <div className="hero-place" style={{
           fontFamily: "'Cormorant Upright', serif",
-          fontSize: "clamp(1rem, 2.5vw, 1.4rem)",
+          fontSize: "clamp(1.1rem, 3vw, 1.5rem)",
           letterSpacing: "3px",
           opacity: 0.85,
         }}>
