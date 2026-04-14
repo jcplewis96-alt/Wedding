@@ -22,10 +22,10 @@ export function OurStory() {
             display: "block",
           }}
         />
-        {/* Champagne overlay — fully opaque at top to blend with wave */}
+        {/* Champagne overlay */}
         <div style={{
           position: "absolute", inset: 0,
-          background: "linear-gradient(to bottom, rgba(250,246,237,1) 0%, rgba(240,235,226,0.4) 25%, rgba(240,235,226,0.2) 60%, rgba(255,255,255,1) 100%)",
+          background: "linear-gradient(to bottom, rgba(240,235,226,0.15) 0%, rgba(240,235,226,0.55) 60%, rgba(255,255,255,1) 100%)",
         }} />
 
         {/* Title over photo */}
@@ -36,11 +36,11 @@ export function OurStory() {
           <FadeIn direction="up" duration={1000}>
             <p style={{
               fontFamily: "'Cormorant Upright', serif",
-              fontSize: "clamp(14px, 2.5vw, 18px)",
+              fontSize: "clamp(10px, 1.8vw, 13px)",
               letterSpacing: "6px",
               color: "#c9a96e",
               textTransform: "uppercase",
-              margin: "0 0 8px",
+              margin: "0 0 6px",
             }}>Nuestra Historia</p>
             <h2 style={{
               fontFamily: "'Great Vibes', cursive",
@@ -62,7 +62,7 @@ export function OurStory() {
             <p style={{
               fontFamily: "'Cormorant Upright', serif",
               fontStyle: "italic",
-              fontSize: "clamp(15px, 2.2vw, 18px)",
+              fontSize: "clamp(13px, 1.8vw, 16px)",
               color: "#8B6F47",
               marginTop: "8px",
               letterSpacing: "2px",
@@ -285,3 +285,4 @@ export function OurStory() {
     </section>
   );
 }
+
