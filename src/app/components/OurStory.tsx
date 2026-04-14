@@ -25,7 +25,7 @@ export function OurStory() {
         {/* Champagne overlay — fully opaque at top to blend with wave */}
         <div style={{
           position: "absolute", inset: 0,
-          background: "linear-gradient(to bottom, rgba(250,246,237,0.6) 0%, rgba(240,235,226,0.2) 25%, rgba(240,235,226,0.1) 60%, rgba(255,255,255,1) 100%)",
+          background: "linear-gradient(to bottom, rgba(250,246,237,1) 0%, rgba(240,235,226,0.4) 25%, rgba(240,235,226,0.2) 60%, rgba(255,255,255,1) 100%)",
         }} />
 
         {/* Title over photo */}
@@ -38,10 +38,9 @@ export function OurStory() {
               fontFamily: "'Cormorant Upright', serif",
               fontSize: "clamp(14px, 2.5vw, 18px)",
               letterSpacing: "6px",
-              color: "#ffffff",
+              color: "#c9a96e",
               textTransform: "uppercase",
               margin: "0 0 8px",
-              textShadow: "0 1px 8px rgba(0,0,0,0.4)",
             }}>Nuestra Historia</p>
             <h2 style={{
               fontFamily: "'Great Vibes', cursive",
@@ -64,10 +63,9 @@ export function OurStory() {
               fontFamily: "'Cormorant Upright', serif",
               fontStyle: "italic",
               fontSize: "clamp(15px, 2.2vw, 18px)",
-              color: "#ffffff",
+              color: "#8B6F47",
               marginTop: "8px",
               letterSpacing: "2px",
-              textShadow: "0 1px 8px rgba(0,0,0,0.4)",
             }}>18 de Agosto de 2018</p>
           </FadeIn>
         </div>
