@@ -117,7 +117,7 @@ export function Hero() {
         {/* Date */}
         <div className="hero-date" style={{
           fontFamily: "'Cormorant Upright', serif",
-          fontSize: "clamp(1rem, 2.2vw, 1.3rem)",
+          fontSize: "clamp(1.2rem, 3vw, 1.6rem)",
           letterSpacing: "4px",
           marginBottom: "0.6rem",
           fontStyle: "italic",
@@ -128,9 +128,9 @@ export function Hero() {
         {/* Place */}
         <div className="hero-place" style={{
           fontFamily: "'Cormorant Upright', serif",
-          fontSize: "clamp(0.85rem, 1.8vw, 1.1rem)",
+          fontSize: "clamp(1rem, 2.5vw, 1.4rem)",
           letterSpacing: "3px",
-          opacity: 0.75,
+          opacity: 0.85,
         }}>
           Hacienda El Salitre · Bogotá, Colombia
         </div>
