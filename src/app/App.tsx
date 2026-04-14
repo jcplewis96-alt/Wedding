@@ -9,10 +9,8 @@ import { OurStory } from "./components/OurStory";
 import { Gallery } from "./components/Gallery";
 import { RSVP } from "./components/RSVP";
 import { Footer } from "./components/Footer";
-import { DressCode } from "./components/DressCode";
-import { Detalles } from "./components/Detalles";
-import { useGuest } from "./hooks/useGuest";
 import { Toaster } from "./components/ui/sonner";
+import { useGuest } from "./hooks/useGuest";
 
 export default function App() {
   const { guest, loading: guestLoading } = useGuest();
@@ -28,6 +26,7 @@ export default function App() {
   const sparkleRef   = useRef<HTMLDivElement>(null);
 
   const triggerSparkleTransition = () => {
+    // Wait for guest data to load before allowing transition
     if (guestLoading) return;
     const splash   = splashRef.current;
     const sparkle  = sparkleRef.current;
@@ -63,23 +62,28 @@ export default function App() {
 
     // 4s idle → opening animation (~3.5s) → 10s reading time → fade at 17.5s → hide at 19s
     const openTimer = setTimeout(() => {
-      if (textRef.current) {
-        textRef.current.style.transition = "opacity 0.8s ease";
-        textRef.current.style.opacity    = "0";
+      if (sealRef.current)  { sealRef.current.style.transition  = "opacity 0.6s ease"; sealRef.current.style.opacity  = "0"; }
+      if (textRef.current)  { textRef.current.style.transition  = "opacity 0.6s ease"; textRef.current.style.opacity  = "0"; }
+      if (topFlapRef.current) {
+        topFlapRef.current.style.transition = "transform 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.2s";
+        topFlapRef.current.style.transform  = "rotateX(180deg)";
       }
-      const envelopeImg = splashRef.current?.querySelector('img') as HTMLImageElement | null;
-      if (envelopeImg) {
-        envelopeImg.style.transition = "transform 2.5s cubic-bezier(0.22,1,0.36,1), opacity 2s ease 0.5s";
-        envelopeImg.style.transform  = "scale(1.08)";
-        envelopeImg.style.opacity    = "0.4";
+      if (leftFlapRef.current) {
+        leftFlapRef.current.style.transition = "transform 1.75s cubic-bezier(0.77, 0, 0.175, 1) 0.1s";
+        leftFlapRef.current.style.transform  = "translateX(-100%)";
+      }
+      if (rightFlapRef.current) {
+        rightFlapRef.current.style.transition = "transform 1.75s cubic-bezier(0.77, 0, 0.175, 1) 0.1s";
+        rightFlapRef.current.style.transform  = "translateX(100%)";
       }
       if (innerRef.current) {
-        innerRef.current.style.transition = "transform 1.5s ease";
-        innerRef.current.style.transform  = "scale(1.1)";
+        innerRef.current.style.transition = "opacity 0.8s ease 0.8s";
+        innerRef.current.style.opacity    = "1";
       }
     }, 4000);
 
     const fadeTimer = setTimeout(() => {
+      // Only transition if guest data has loaded, otherwise wait
       const tryTransition = () => {
         if (!guestLoading) {
           triggerSparkleTransition();
@@ -135,17 +139,27 @@ export default function App() {
           {/* Envelope */}
           <div style={{ position: "relative", width: "420px", height: "300px" }}>
 
-            {/* Envelope image */}
-            <img
-              src="/envelope.png"
-              alt="Sobre de invitación"
-              style={{
-                position: "absolute", inset: 0,
-                width: "100%", height: "100%",
-                objectFit: "contain",
-                filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.3))",
-              }}
-            />
+            {/* Envelope body — Nube de Algodón: soft organic tone variations, no lines */}
+            <div style={{
+              position: "absolute", inset: 0,
+              background: `
+                radial-gradient(ellipse at 20% 30%, #faf6ee 0%, transparent 45%),
+                radial-gradient(ellipse at 80% 15%, #f5eedf 0%, transparent 40%),
+                radial-gradient(ellipse at 55% 75%, #ede4d2 0%, transparent 50%),
+                radial-gradient(ellipse at 10% 80%, #f0e8d8 0%, transparent 38%),
+                radial-gradient(ellipse at 90% 70%, #e8dece 0%, transparent 42%),
+                radial-gradient(ellipse at 45% 40%, #f2ead8 0%, transparent 35%),
+                linear-gradient(145deg, #f5ede0 0%, #ece3d0 50%, #e5dac8 100%)
+              `,
+              border: "1px solid #ccc0a8",
+              borderRadius: "3px",
+              boxShadow: `
+                0 16px 60px rgba(0,0,0,0.25),
+                0 4px 12px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.6),
+                inset 0 -1px 0 rgba(0,0,0,0.04)
+              `,
+            }} />
 
             {/* Cotton cloud — secondary depth layer */}
             <div style={{
@@ -209,13 +223,28 @@ export default function App() {
                   lineHeight: 1.4,
                 }}>
                   {guestLoading
-                    ? <span style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
+                    ? <span style={{
+                        display: "inline-flex", flexDirection: "column",
+                        alignItems: "center", justifyContent: "center", gap: "10px",
+                      }}>
                         <span style={{ display: "inline-flex", gap: "6px", alignItems: "center" }}>
-                          <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0s", width: "8px", height: "8px", borderRadius: "50%", background: "#c9a96e", display: "inline-block" }} />
-                          <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0.2s", width: "8px", height: "8px", borderRadius: "50%", background: "#c9a96e", display: "inline-block" }} />
-                          <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0.4s", width: "8px", height: "8px", borderRadius: "50%", background: "#c9a96e", display: "inline-block" }} />
+                          <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0s",
+                            width: "8px", height: "8px", borderRadius: "50%",
+                            background: "#c9a96e", display: "inline-block" }} />
+                          <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0.2s",
+                            width: "8px", height: "8px", borderRadius: "50%",
+                            background: "#c9a96e", display: "inline-block" }} />
+                          <span style={{ animation: "dotPulse 1.4s ease-in-out infinite", animationDelay: "0.4s",
+                            width: "8px", height: "8px", borderRadius: "50%",
+                            background: "#c9a96e", display: "inline-block" }} />
                         </span>
-                        <span style={{ fontFamily: "'Cormorant Upright', cursive", fontSize: "13px", color: "#a89070", letterSpacing: "3px", animation: "textFade 1.8s ease-in-out infinite" }}>Abriendo tu invitación...</span>
+                        <span style={{
+                          fontFamily: "'Cormorant Upright', cursive",
+                          fontSize: "13px",
+                          color: "#a89070",
+                          letterSpacing: "3px",
+                          animation: "textFade 1.8s ease-in-out infinite",
+                        }}>Abriendo tu invitación...</span>
                       </span>
                     : guest
                       ? `${guest.invitado}${guest.cupos > 0 ? ` (${guest.cupos})` : ""}`
@@ -630,7 +659,7 @@ export default function App() {
       <div id="dresscode"><DressCode /></div>
       <div style={{ background: "#e8e2d8" }}><Wave color="#faf6ed" /></div>
       <div id="detalles"><Detalles /></div>
-      <div style={{ background: "#faf6ed" }}><Wave color="#ffffff" /></div>
+      <div style={{ background: "#faf6ed" }}><Wave color="#faf6ed" /></div>
       <div id="historia"><OurStory /></div>
       <div style={{ background: "#ffffff" }}><Wave color="#e8e2d8" /></div>
       <div id="galeria"><Gallery /></div>
