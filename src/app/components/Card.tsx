@@ -35,49 +35,52 @@ export function Card() {
             textAlign: "center", position: "relative", zIndex: 2,
           }}>
 
-            {/* Parents */}
+            {/* Parents — stacked vertically, no overflow issues */}
             <div style={{
               display: "flex", justifyContent: "center",
-              marginBottom: "32px", marginTop: "24px",
-              gap: "0", overflow: "hidden",
+              marginBottom: "28px", marginTop: "16px",
+              gap: "0",
             }}>
-              <div style={{ flex: 1, textAlign: "center", paddingRight: "16px", minWidth: 0 }}>
+              {/* Bride's parents */}
+              <div style={{ flex: 1, textAlign: "center", paddingRight: "16px" }}>
                 <p style={{
                   fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                  fontSize: "clamp(10px, 2.8vw, 15px)", color: "#7a6040",
-                  lineHeight: 2.0, margin: 0,
-                  overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
-                }}>Ángel Custodio Raga Gámez</p>
+                  fontSize: "clamp(12px, 3vw, 16px)", color: "#5a3e20",
+                  lineHeight: 1.8, margin: 0,
+                }}>Ángel Custodio<br />Raga Gámez</p>
+                <div style={{ width: "30px", height: "1px", background: "#c9a96e", margin: "6px auto" }} />
                 <p style={{
                   fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                  fontSize: "clamp(10px, 2.8vw, 15px)", color: "#7a6040",
-                  lineHeight: 2.0, margin: 0,
-                  overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
-                }}>Luz Stella Rodríguez Sandoval</p>
+                  fontSize: "clamp(12px, 3vw, 16px)", color: "#5a3e20",
+                  lineHeight: 1.8, margin: 0,
+                }}>Luz Stella<br />Rodríguez Sandoval</p>
               </div>
+
+              {/* Vertical divider */}
               <div style={{
-                width: "1px", minHeight: "80px",
+                width: "1px",
                 background: "linear-gradient(to bottom, transparent, #c9a96e, transparent)",
                 flexShrink: 0,
               }} />
-              <div style={{ flex: 1, textAlign: "center", paddingLeft: "16px", minWidth: 0 }}>
+
+              {/* Groom's parents */}
+              <div style={{ flex: 1, textAlign: "center", paddingLeft: "16px" }}>
                 <p style={{
                   fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                  fontSize: "clamp(10px, 2.8vw, 15px)", color: "#7a6040",
-                  lineHeight: 2.0, margin: 0,
-                  overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
-                }}>Juan Carlos Peñaranda Ávila</p>
+                  fontSize: "clamp(12px, 3vw, 16px)", color: "#5a3e20",
+                  lineHeight: 1.8, margin: 0,
+                }}>Juan Carlos<br />Peñaranda Ávila</p>
+                <div style={{ width: "30px", height: "1px", background: "#c9a96e", margin: "6px auto" }} />
                 <p style={{
                   fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                  fontSize: "clamp(10px, 2.8vw, 15px)", color: "#7a6040",
-                  lineHeight: 2.0, margin: 0,
-                  overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
-                }}>María Beatríz Lewis Porras</p>
+                  fontSize: "clamp(12px, 3vw, 16px)", color: "#5a3e20",
+                  lineHeight: 1.8, margin: 0,
+                }}>María Beatríz<br />Lewis Porras</p>
               </div>
             </div>
 
             {/* Divider */}
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", marginBottom: "24px" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", marginBottom: "22px" }}>
               <div style={{ height: "1px", width: "80px", background: "linear-gradient(to right, transparent, #c9a96e)" }} />
               <span style={{ color: "#c9a96e", fontSize: "12px" }}>✦</span>
               <div style={{ height: "1px", width: "80px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
@@ -86,14 +89,14 @@ export function Card() {
             {/* Invitation phrase */}
             <p style={{
               fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-              fontSize: "clamp(14px, 1.8vw, 17px)", color: "#7a6040",
-              marginBottom: "28px", lineHeight: 1.6,
+              fontSize: "clamp(15px, 2.2vw, 18px)", color: "#5a3e20",
+              marginBottom: "24px", lineHeight: 1.6,
             }}>
               tienen el gusto de invitar al matrimonio de sus hijos
             </p>
 
             {/* Names */}
-            <div style={{ marginBottom: "32px" }}>
+            <div style={{ marginBottom: "28px" }}>
               <p style={{
                 fontFamily: "'Great Vibes', cursive",
                 fontSize: "clamp(42px, 7vw, 72px)",
@@ -114,7 +117,7 @@ export function Card() {
             </div>
 
             {/* Divider */}
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", marginBottom: "28px" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", marginBottom: "24px" }}>
               <div style={{ height: "1px", width: "60px", background: "linear-gradient(to right, transparent, #c9a96e)" }} />
               <span style={{ color: "#c9a96e", fontSize: "10px" }}>✦</span>
               <div style={{ height: "1px", width: "60px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
@@ -124,18 +127,18 @@ export function Card() {
             <div style={{ marginBottom: "28px" }}>
               <p style={{
                 fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                fontSize: "clamp(14px, 1.8vw, 17px)", color: "#7a6040",
-                lineHeight: 1.9, margin: 0,
+                fontSize: "clamp(15px, 2.2vw, 18px)", color: "#5a3e20",
+                lineHeight: 2.0, margin: 0,
               }}>
-                ceremonia que se celebrará<br />
-                el sábado dieciocho de julio a las cuatro de la tarde<br />
+                Ceremonia que se celebrará<br />
+                el sábado 18 de julio a las 4:00 PM<br />
                 en la <strong style={{ fontWeight: 500, color: "#8B6F47" }}>Hacienda El Salitre</strong><br />
                 y a la recepción que se ofrecerá a continuación
               </p>
             </div>
 
             {/* Divider */}
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", marginBottom: "24px" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", marginBottom: "22px" }}>
               <div style={{ height: "1px", width: "80px", background: "linear-gradient(to right, transparent, #c9a96e)" }} />
               <span style={{ color: "#c9a96e", fontSize: "12px" }}>✦</span>
               <div style={{ height: "1px", width: "80px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
@@ -144,7 +147,7 @@ export function Card() {
             {/* City and date */}
             <p style={{
               fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-              fontSize: "clamp(14px, 1.8vw, 17px)", color: "#7a6040",
+              fontSize: "clamp(15px, 2.2vw, 18px)", color: "#5a3e20",
               margin: "0 0 24px", letterSpacing: "1px",
             }}>
               Bogotá, 18 de Julio de 2026
@@ -161,7 +164,7 @@ export function Card() {
                 border: "1px solid #c9a96e",
                 color: "#8B6520",
                 fontFamily: "'Cormorant Upright', serif",
-                fontSize: "clamp(11px, 1.8vw, 13px)",
+                fontSize: "clamp(13px, 2vw, 15px)",
                 letterSpacing: "2px", textDecoration: "none",
                 textTransform: "uppercase", background: "transparent",
                 transition: "background 0.3s ease, color 0.3s ease",
