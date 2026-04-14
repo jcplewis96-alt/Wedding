@@ -130,8 +130,7 @@ export function Card() {
                 fontSize: "clamp(15px, 2.2vw, 18px)", color: "#5a3e20",
                 lineHeight: 2.0, margin: 0,
               }}>
-                Ceremonia que se celebrará<br />
-                el sábado 18 de julio a las 4:00 PM<br />
+                Ceremonia que se celebrará el sábado 18 de julio a las 4:00 PM<br />
                 en la <strong style={{ fontWeight: 500, color: "#8B6F47" }}>Hacienda El Salitre</strong><br />
                 y a la recepción que se ofrecerá a continuación
               </p>
