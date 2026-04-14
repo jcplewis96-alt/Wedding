@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Wave } from "./components/Wave";
@@ -14,6 +14,7 @@ import { useGuest } from "./hooks/useGuest";
 
 export default function App() {
   const { guest, loading: guestLoading } = useGuest();
+  const [showNav, setShowNav] = React.useState(false);
   const splashRef    = useRef<HTMLDivElement>(null);
   const sealRef      = useRef<HTMLDivElement>(null);
   const textRef      = useRef<HTMLDivElement>(null);
@@ -49,6 +50,7 @@ export default function App() {
     setTimeout(() => {
       splash.style.display  = "none";
       sparkle.style.display = "none";
+      setShowNav(true);
     }, 5300);
   };
 
@@ -84,6 +86,7 @@ export default function App() {
 
     const hideTimer = setTimeout(() => {
       if (splash) splash.style.display = "none";
+      setShowNav(true);
     }, 13500);
 
     // Show the button only after the card is fully visible (~4s idle + 1.75s open + 0.8s card fade = ~6.6s)
@@ -206,7 +209,7 @@ export default function App() {
               <div style={{ color: "#5a3e20", textAlign: "center", padding: "16px", position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <div style={{
                   fontFamily: "'Great Vibes', cursive",
-                  fontSize: "clamp(18px, 4vw, 28px)",
+                  fontSize: "clamp(26px, 6vw, 42px)",
                   lineHeight: 1.4,
                 }}>
                   {guestLoading
@@ -638,7 +641,7 @@ export default function App() {
       </div>
 
       {/* Main content */}
-      <Navbar />
+      {showNav && <Navbar />}
       <div id="hero"><Hero /></div>
       <div style={{ background: "#f0ebe2" }}><Wave color="#f0ebe2" /></div>
       <div id="invitacion"><Card /></div>
