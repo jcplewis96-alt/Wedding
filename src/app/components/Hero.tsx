@@ -122,7 +122,7 @@ export function Hero() {
           marginBottom: "0.6rem",
           fontStyle: "italic",
         }}>
-          18 de Julio de 2026
+          18 de Julio de 2026 · 4:00 PM
         </div>
 
         {/* Place */}
