@@ -41,7 +41,7 @@ export function DressCode() {
           {/* Title */}
           <p style={{
             fontFamily: "'Cormorant Upright', serif",
-            fontSize: "clamp(10px, 2vw, 12px)",
+            fontSize: "clamp(13px, 2.5vw, 16px)",
             letterSpacing: "4px",
             color: "#c9a96e",
             textTransform: "uppercase",
@@ -88,9 +88,9 @@ export function DressCode() {
               <div style={{ width: "30px", height: "1px", background: "#c9a96e", margin: "6px auto 8px" }} />
               <p style={{
                 fontFamily: "'Cormorant Upright', serif",
-                fontSize: "clamp(12px, 2vw, 15px)",
+                fontSize: "clamp(15px, 2.5vw, 18px)",
                 letterSpacing: "3px", textTransform: "uppercase",
-                color: "#7a6040", margin: 0, fontWeight: 500,
+                color: "#5a3e20", margin: 0, fontWeight: 500,
               }}>Smoking</p>
             </div>
 
@@ -105,15 +105,15 @@ export function DressCode() {
               <div style={{ width: "30px", height: "1px", background: "#c9a96e", margin: "6px auto 8px" }} />
               <p style={{
                 fontFamily: "'Cormorant Upright', serif",
-                fontSize: "clamp(12px, 2vw, 15px)",
+                fontSize: "clamp(15px, 2.5vw, 18px)",
                 letterSpacing: "3px", textTransform: "uppercase",
-                color: "#7a6040", margin: 0, fontWeight: 500,
+                color: "#5a3e20", margin: 0, fontWeight: 500,
               }}>Vestido largo</p>
               <p style={{
                 fontFamily: "'Cormorant Upright', serif",
                 fontStyle: "italic",
-                fontSize: "clamp(11px, 1.8vw, 13px)",
-                color: "#a89070", margin: "4px 0 0",
+                fontSize: "clamp(14px, 2.5vw, 17px)",
+                color: "#7a6040", margin: "4px 0 0",
               }}>sin estampados</p>
               <a
                 href="https://pin.it/3Pg32udDG"
