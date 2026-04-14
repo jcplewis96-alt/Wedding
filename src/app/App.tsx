@@ -26,6 +26,8 @@ export default function App() {
   const sparkleRef   = useRef<HTMLDivElement>(null);
 
   const triggerSparkleTransition = () => {
+    // Wait for guest data to load before allowing transition
+    if (guestLoading) return;
     const splash   = splashRef.current;
     const sparkle  = sparkleRef.current;
     if (!splash || !sparkle) return;
@@ -81,7 +83,15 @@ export default function App() {
     }, 4000);
 
     const fadeTimer = setTimeout(() => {
-      triggerSparkleTransition();
+      // Only transition if guest data has loaded, otherwise wait
+      const tryTransition = () => {
+        if (!guestLoading) {
+          triggerSparkleTransition();
+        } else {
+          setTimeout(tryTransition, 500);
+        }
+      };
+      tryTransition();
     }, 11000);
 
     const hideTimer = setTimeout(() => {
