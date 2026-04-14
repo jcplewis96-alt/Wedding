@@ -10,7 +10,7 @@ export function RSVP() {
   const invitado = guest?.invitado || "";
   const cupos    = guest?.cupos || 1;
 
-  const [confirma,    setConfirma]    = useState<"si"|"no"|"">("");
+  const [confirma,    setConfirma]    = useState<"si"|"no"|"decidiendo"|"">("");
   const [personas,    setPersonas]    = useState(cupos);
   const [transporteIda,    setTransporteIda]    = useState<"si"|"no"|"">("");
   const [transporteVuelta, setTransporteVuelta] = useState<"si"|"no"|"12"|"2"|"">("");
@@ -34,7 +34,7 @@ export function RSVP() {
           token:       TOKEN,
           invitado:    invitado || "Invitado general",
           cupos,
-          confirma:    confirma === "si" ? "Confirma asistencia" : "No puede asistir",
+          confirma:    confirma === "si" ? "Confirma asistencia" : confirma === "decidiendo" ? "Aún está decidiendo" : "No puede asistir",
           personas:    confirma === "si" ? personas : 0,
           transporteIda:    confirma === "si" ? (transporteIda === "si" ? "Sí" : transporteIda === "no" ? "No" : "No respondió") : "N/A",
           transporteVuelta: confirma === "si" ? (transporteVuelta || "No respondió") : "N/A",
@@ -184,7 +184,7 @@ export function RSVP() {
                   fontFamily: "'Great Vibes', cursive",
                   fontSize: "clamp(28px, 5vw, 38px)",
                   color: "#b8902a", margin: "0 0 8px",
-                }}>{confirma === "si" ? "¡Nos alegra contar contigo!" : "Gracias por avisarnos"}</p>
+                }}>{confirma === "si" ? "¡Nos alegra contar contigo!" : confirma === "decidiendo" ? "¡Gracias por avisarnos!" : "Gracias por avisarnos"}</p>
                 <p style={{
                   fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
                   fontSize: "clamp(13px, 2vw, 15px)", color: "#7a6040",
@@ -198,14 +198,21 @@ export function RSVP() {
                   <p style={{
                     fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
                     fontSize: "clamp(14px, 2.5vw, 16px)", color: "#5a3e20",
-                    letterSpacing: "2px", margin: "0 0 8px",
+                    letterSpacing: "2px", margin: "0 0 4px",
                     textTransform: "uppercase", textAlign: "center",
                   }}>¿Confirmas tu asistencia?</p>
-                  <div style={{ display: "flex", gap: "10px" }}>
+                  <p style={{
+                    fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
+                    fontSize: "clamp(13px, 2vw, 15px)", color: "#c9a96e",
+                    margin: "0 0 12px", textAlign: "center", letterSpacing: "1px",
+                  }}>Por favor confirma antes del 1 de junio de 2026</p>
+                  <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
                     <button className={`rsvp-option ${confirma === "si" ? "selected-si" : ""}`}
                       onClick={() => setConfirma("si")}>Con alegría acepto</button>
                     <button className={`rsvp-option ${confirma === "no" ? "selected-no" : ""}`}
                       onClick={() => setConfirma("no")}>Con pena declino</button>
+                    <button className={`rsvp-option ${confirma === "decidiendo" ? "selected-si" : ""}`}
+                      onClick={() => setConfirma("decidiendo")}>Aún estoy decidiendo</button>
                   </div>
                 </div>
 
@@ -243,13 +250,13 @@ export function RSVP() {
                   <div>
                     <p style={{
                       fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                      fontSize: "clamp(12px, 2vw, 14px)", color: "#a89070",
+                      fontSize: "clamp(14px, 2.5vw, 16px)", color: "#5a3e20",
                       letterSpacing: "2px", margin: "0 0 4px",
                       textTransform: "uppercase", textAlign: "center",
                     }}>¿Usarías el transporte de Bogotá a la Hacienda?</p>
                     <p style={{
                       fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                      fontSize: "clamp(12px, 2vw, 14px)", color: "#8B6F47",
+                      fontSize: "clamp(14px, 2.5vw, 16px)", color: "#5a3e20",
                       margin: "0 0 10px", textAlign: "center",
                     }}>Punto de partida: Hotel W, Cra 9 # 115-30<br/>Hora de salida: 2:15 PM</p>
                     <div style={{ display: "flex", gap: "10px" }}>
@@ -264,13 +271,13 @@ export function RSVP() {
                   <div>
                     <p style={{
                       fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                      fontSize: "clamp(12px, 2vw, 14px)", color: "#a89070",
+                      fontSize: "clamp(14px, 2.5vw, 16px)", color: "#5a3e20",
                       letterSpacing: "2px", margin: "0 0 4px",
                       textTransform: "uppercase", textAlign: "center",
                     }}>¿Usarías el transporte de la Hacienda a Bogotá?</p>
                     <p style={{
                       fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                      fontSize: "clamp(11px, 1.8vw, 13px)", color: "#8B6F47",
+                      fontSize: "clamp(14px, 2.5vw, 16px)", color: "#5a3e20",
                       margin: "0 0 10px", textAlign: "center",
                     }}>Selecciona el horario de salida</p>
                     <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
@@ -287,7 +294,7 @@ export function RSVP() {
                   <div>
                     <p style={{
                       fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                      fontSize: "clamp(12px, 2vw, 14px)", color: "#a89070",
+                      fontSize: "clamp(14px, 2.5vw, 16px)", color: "#5a3e20",
                       letterSpacing: "2px", margin: "0 0 8px",
                       textTransform: "uppercase", textAlign: "center",
                     }}>¿Tienes alguna restricción alimenticia?</p>
