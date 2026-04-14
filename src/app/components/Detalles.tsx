@@ -25,7 +25,6 @@ export function Detalles() {
           position: "relative",
         }}>
 
-          {/* Gold border */}
           <div style={{
             position: "absolute", inset: "8px",
             border: "1px solid #c9a96e",
@@ -41,7 +40,7 @@ export function Detalles() {
             {/* Title */}
             <p style={{
               fontFamily: "'Cormorant Upright', serif",
-              fontSize: "clamp(10px, 2vw, 12px)",
+              fontSize: "clamp(14px, 2.5vw, 17px)",
               letterSpacing: "4px",
               color: "#c9a96e",
               textTransform: "uppercase",
@@ -66,14 +65,14 @@ export function Detalles() {
               <div style={{ height: "1px", width: "50px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
             </div>
 
-            {/* Message — compact */}
+            {/* Message */}
             <p style={{
               fontFamily: "'Cormorant Upright', serif",
               fontStyle: "italic",
-              fontSize: "clamp(13px, 2vw, 16px)",
-              color: "#7a6040",
-              lineHeight: 1.6,
-              margin: "0 0 16px",
+              fontSize: "clamp(16px, 2.5vw, 19px)",
+              color: "#5a3e20",
+              lineHeight: 1.8,
+              margin: "0 0 20px",
             }}>
               Tu presencia es nuestro mejor regalo.
               Si deseas un gesto adicional, encontrarás
@@ -81,32 +80,32 @@ export function Detalles() {
               También contaremos con lluvia de sobres.
             </p>
 
-            {/* Bank details — compact */}
+            {/* Bank details */}
             <div style={{
-              marginBottom: "14px",
-              padding: "12px 16px",
+              marginBottom: "18px",
+              padding: "14px 18px",
               border: "1px solid #d0c0a0",
               borderRadius: "2px",
               background: "rgba(255,255,255,0.5)",
               textAlign: "center",
-              maxWidth: "260px",
-              margin: "0 auto 14px",
+              maxWidth: "280px",
+              margin: "0 auto 18px",
             }}>
               <p style={{
                 fontFamily: "'Cormorant Upright', serif",
-                fontSize: "clamp(9px, 1.8vw, 11px)",
+                fontSize: "clamp(12px, 2vw, 14px)",
                 letterSpacing: "3px",
                 color: "#c9a96e",
                 textTransform: "uppercase",
-                margin: "0 0 8px",
+                margin: "0 0 10px",
                 textAlign: "center",
               }}>Datos bancarios</p>
               <div style={{
                 fontFamily: "'Cormorant Upright', serif",
                 fontStyle: "italic",
-                fontSize: "clamp(12px, 2vw, 14px)",
-                color: "#7a6040",
-                lineHeight: 1.7,
+                fontSize: "clamp(14px, 2.5vw, 17px)",
+                color: "#5a3e20",
+                lineHeight: 1.9,
               }}>
                 <p style={{ margin: 0 }}>No. de cuenta: <strong style={{ fontWeight: 500 }}>64050881961</strong></p>
                 <p style={{ margin: 0 }}>María de los Ángeles Raga</p>
@@ -120,14 +119,14 @@ export function Detalles() {
             <div style={{
               display: "flex", alignItems: "center",
               justifyContent: "center", gap: "12px",
-              marginBottom: "14px",
+              marginBottom: "16px",
             }}>
               <div style={{ height: "1px", width: "40px", background: "linear-gradient(to right, transparent, #c9a96e)" }} />
               <span style={{ color: "#c9a96e", fontSize: "10px" }}>✦</span>
               <div style={{ height: "1px", width: "40px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
             </div>
 
-            {/* QR — smaller on mobile */}
+            {/* QR */}
             <div style={{
               display: "inline-block",
               padding: "8px",
@@ -135,30 +134,18 @@ export function Detalles() {
               border: "1px solid #d0c0a0",
               borderRadius: "4px",
               boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
-              marginBottom: "8px",
             }}>
               <img
                 src="/qr.jpeg"
                 alt="QR datos bancarios"
                 style={{
-                  width: "clamp(100px, 22vw, 140px)",
-                  height: "clamp(100px, 22vw, 140px)",
+                  width: "clamp(120px, 25vw, 160px)",
+                  height: "clamp(120px, 25vw, 160px)",
                   display: "block",
                   objectFit: "contain",
                 }}
               />
             </div>
-
-            <p style={{
-              fontFamily: "'Cormorant Upright', serif",
-              fontStyle: "italic",
-              fontSize: "clamp(10px, 1.6vw, 12px)",
-              color: "#a89070",
-              margin: 0,
-              letterSpacing: "1px",
-            }}>
-              Escanea para datos bancarios
-            </p>
 
           </div>
         </div>
