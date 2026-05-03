@@ -58,7 +58,7 @@ export function Detalles() {
             <div style={{
               display: "flex", alignItems: "center",
               justifyContent: "center", gap: "12px",
-              marginBottom: "16px",
+              marginBottom: "24px",
             }}>
               <div style={{ height: "1px", width: "50px", background: "linear-gradient(to right, transparent, #c9a96e)" }} />
               <span style={{ color: "#c9a96e", fontSize: "10px" }}>✦</span>
@@ -71,41 +71,53 @@ export function Detalles() {
               fontStyle: "italic",
               fontSize: "clamp(16px, 2.5vw, 19px)",
               color: "#5a3e20",
-              lineHeight: 1.8,
-              margin: "0 0 20px",
+              lineHeight: 1.9,
+              margin: "0 0 28px",
             }}>
-              Tu presencia es nuestro mejor regalo.
-              Si deseas un gesto adicional, encontrarás
-              un código QR y datos bancarios a continuación.
-              También contaremos con lluvia de sobres.
+              Tu presencia es el regalo más grande<br />
+              que nos puedes dar.<br /><br />
+              Si deseas hacernos un regalo adicional,<br />
+              con mucho amor te compartimos<br />
+              nuestros datos bancarios.<br /><br />
+              También contaremos con<br />
+              lluvia de sobres el día del evento.
             </p>
+
+            {/* Gold divider */}
+            <div style={{
+              display: "flex", alignItems: "center",
+              justifyContent: "center", gap: "12px",
+              marginBottom: "24px",
+            }}>
+              <div style={{ height: "1px", width: "60px", background: "linear-gradient(to right, transparent, #c9a96e)" }} />
+              <span style={{ color: "#c9a96e", fontSize: "10px" }}>✦</span>
+              <div style={{ height: "1px", width: "60px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
+            </div>
 
             {/* Bank details */}
             <div style={{
-              marginBottom: "18px",
-              padding: "14px 18px",
+              padding: "16px 20px",
               border: "1px solid #d0c0a0",
               borderRadius: "2px",
               background: "rgba(255,255,255,0.5)",
               textAlign: "center",
               maxWidth: "280px",
-              margin: "0 auto 18px",
+              margin: "0 auto",
             }}>
               <p style={{
                 fontFamily: "'Cormorant Upright', serif",
-                fontSize: "clamp(12px, 2vw, 14px)",
+                fontSize: "clamp(11px, 2vw, 13px)",
                 letterSpacing: "3px",
                 color: "#c9a96e",
                 textTransform: "uppercase",
-                margin: "0 0 10px",
-                textAlign: "center",
+                margin: "0 0 12px",
               }}>Datos bancarios</p>
               <div style={{
                 fontFamily: "'Cormorant Upright', serif",
                 fontStyle: "italic",
                 fontSize: "clamp(14px, 2.5vw, 17px)",
                 color: "#5a3e20",
-                lineHeight: 1.9,
+                lineHeight: 2.0,
               }}>
                 <p style={{ margin: 0 }}>No. de cuenta: <strong style={{ fontWeight: 500 }}>64050881961</strong></p>
                 <p style={{ margin: 0 }}>María de los Ángeles Raga</p>
@@ -113,38 +125,6 @@ export function Detalles() {
                 <p style={{ margin: 0 }}>Bancolombia · Ahorros</p>
                 <p style={{ margin: 0 }}>Llave: <strong style={{ fontWeight: 500 }}>1020825384</strong></p>
               </div>
-            </div>
-
-            {/* Gold divider */}
-            <div style={{
-              display: "flex", alignItems: "center",
-              justifyContent: "center", gap: "12px",
-              marginBottom: "16px",
-            }}>
-              <div style={{ height: "1px", width: "40px", background: "linear-gradient(to right, transparent, #c9a96e)" }} />
-              <span style={{ color: "#c9a96e", fontSize: "10px" }}>✦</span>
-              <div style={{ height: "1px", width: "40px", background: "linear-gradient(to left, transparent, #c9a96e)" }} />
-            </div>
-
-            {/* QR */}
-            <div style={{
-              display: "inline-block",
-              padding: "8px",
-              background: "white",
-              border: "1px solid #d0c0a0",
-              borderRadius: "4px",
-              boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
-            }}>
-              <img
-                src="/qr.jpeg"
-                alt="QR datos bancarios"
-                style={{
-                  width: "clamp(120px, 25vw, 160px)",
-                  height: "clamp(120px, 25vw, 160px)",
-                  display: "block",
-                  objectFit: "contain",
-                }}
-              />
             </div>
 
           </div>
