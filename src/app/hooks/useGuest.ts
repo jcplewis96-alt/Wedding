@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL as string;
-const TOKEN = import.meta.env.VITE_SECRET_TOKEN as string;
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxhwQ68ZvVL8245SZ3zzAa0iGctiAQQmCS-mjBfz6Nc-3Dw5ukM8Ae3XKLwZZVIhZTz0Q/exec";
+const TOKEN = "boda-juma-2026-secret";
 
 export interface Guest {
   invitado: string;
