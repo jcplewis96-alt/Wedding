@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useGuest } from "../hooks/useGuest";
 import { FadeIn } from "./FadeIn";
 
-const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL as string;
-const TOKEN = import.meta.env.VITE_SECRET_TOKEN as string;
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxhwQ68ZvVL8245SZ3zzAa0iGctiAQQmCS-mjBfz6Nc-3Dw5ukM8Ae3XKLwZZVIhZTz0Q/exec";
+const TOKEN = "boda-juma-2026-secret";
 
 export function RSVP() {
   const { guest, loading, notFound } = useGuest();
@@ -12,8 +12,7 @@ export function RSVP() {
 
   const [confirma,    setConfirma]    = useState<"si"|"no"|"decidiendo"|"">("");
   const [personas,    setPersonas]    = useState(cupos);
-  const [transporteIda,    setTransporteIda]    = useState<"si"|"no"|"">("");
-  const [transporteVuelta, setTransporteVuelta] = useState<"si"|"no"|"12"|"2"|"">("");
+  const [transporteVuelta, setTransporteVuelta] = useState<"si"|"no"|"12.30"|"2"|"">("");
   const [alimenticia, setAlimenticia] = useState("");
   const [mensaje,     setMensaje]     = useState("");
   const [estado,      setEstado]      = useState<"idle"|"sending"|"ok"|"error">("idle");
@@ -36,7 +35,6 @@ export function RSVP() {
           cupos,
           confirma:    confirma === "si" ? "Confirma asistencia" : confirma === "decidiendo" ? "Aún está decidiendo" : "No puede asistir",
           personas:    confirma === "si" ? personas : 0,
-          transporteIda:    confirma === "si" ? (transporteIda === "si" ? "Sí" : transporteIda === "no" ? "No" : "No respondió") : "N/A",
           transporteVuelta: confirma === "si" ? (transporteVuelta || "No respondió") : "N/A",
           alimenticia: alimenticia || "Ninguna",
           mensaje,
@@ -246,28 +244,7 @@ export function RSVP() {
                     }}>Máximo {cupos} {cupos === 1 ? "persona" : "personas"}</p>
                   </div>
 
-                  {/* Q3 — Transporte ida */}
-                  <div>
-                    <p style={{
-                      fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                      fontSize: "clamp(14px, 2.5vw, 16px)", color: "#5a3e20",
-                      letterSpacing: "2px", margin: "0 0 4px",
-                      textTransform: "uppercase", textAlign: "center",
-                    }}>¿Usarías el transporte de Bogotá a la Hacienda?</p>
-                    <p style={{
-                      fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
-                      fontSize: "clamp(14px, 2.5vw, 16px)", color: "#5a3e20",
-                      margin: "0 0 10px", textAlign: "center",
-                    }}>Punto de partida: Hotel W, Cra 9 # 115-30<br/>Hora de salida: 2:15 PM</p>
-                    <div style={{ display: "flex", gap: "10px" }}>
-                      <button className={`rsvp-option ${transporteIda === "si" ? "selected-si" : ""}`}
-                        onClick={() => setTransporteIda("si")}>Sí, lo usaría</button>
-                      <button className={`rsvp-option ${transporteIda === "no" ? "selected-no" : ""}`}
-                        onClick={() => setTransporteIda("no")}>No, gracias</button>
-                    </div>
-                  </div>
-
-                  {/* Q4 — Transporte vuelta */}
+                  {/* Q3 — Transporte vuelta */}
                   <div>
                     <p style={{
                       fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
@@ -282,7 +259,7 @@ export function RSVP() {
                     }}>Selecciona el horario de salida</p>
                     <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
                       <button className={`rsvp-option ${transporteVuelta === "12" ? "selected-si" : ""}`}
-                        onClick={() => setTransporteVuelta("12")}>12:00 AM</button>
+                        onClick={() => setTransporteVuelta("12.30")}>12:30 AM</button>
                       <button className={`rsvp-option ${transporteVuelta === "2" ? "selected-si" : ""}`}
                         onClick={() => setTransporteVuelta("2")}>2:00 AM</button>
                       <button className={`rsvp-option ${transporteVuelta === "no" ? "selected-no" : ""}`}
