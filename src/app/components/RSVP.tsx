@@ -10,7 +10,7 @@ export function RSVP() {
   const invitado = guest?.invitado || "";
   const cupos    = guest?.cupos || 1;
 
-  const [confirma,    setConfirma]    = useState<"si"|"no"|"decidiendo"|"">("");
+  const [confirma,    setConfirma]    = useState<"si"|"no"|"">("");
   const [personas,    setPersonas]    = useState(cupos);
   const [transporteVuelta, setTransporteVuelta] = useState<"si"|"no"|"12.30"|"2"|"">("");
   const [alimenticia, setAlimenticia] = useState("");
@@ -33,7 +33,7 @@ export function RSVP() {
           token:       TOKEN,
           invitado:    invitado || "Invitado general",
           cupos,
-          confirma:    confirma === "si" ? "Confirma asistencia" : confirma === "decidiendo" ? "Aún está decidiendo" : "No puede asistir",
+          confirma:    confirma === "si" ? "Confirma asistencia" : "No puede asistir",
           personas:    confirma === "si" ? personas : 0,
           transporteVuelta: confirma === "si" ? (transporteVuelta || "No respondió") : "N/A",
           alimenticia: alimenticia || "Ninguna",
@@ -182,7 +182,7 @@ export function RSVP() {
                   fontFamily: "'Great Vibes', cursive",
                   fontSize: "clamp(28px, 5vw, 38px)",
                   color: "#b8902a", margin: "0 0 8px",
-                }}>{confirma === "si" ? "¡Nos alegra contar contigo!" : confirma === "decidiendo" ? "¡Gracias por avisarnos!" : "Gracias por avisarnos"}</p>
+                }}>{confirma === "si" ? "¡Nos alegra contar contigo!" : "Gracias por avisarnos"}</p>
                 <p style={{
                   fontFamily: "'Cormorant Upright', serif", fontStyle: "italic",
                   fontSize: "clamp(13px, 2vw, 15px)", color: "#7a6040",
@@ -209,8 +209,6 @@ export function RSVP() {
                       onClick={() => setConfirma("si")}>Con alegría acepto</button>
                     <button className={`rsvp-option ${confirma === "no" ? "selected-no" : ""}`}
                       onClick={() => setConfirma("no")}>Con pena declino</button>
-                    <button className={`rsvp-option ${confirma === "decidiendo" ? "selected-si" : ""}`}
-                      onClick={() => setConfirma("decidiendo")}>Aún estoy decidiendo</button>
                   </div>
                 </div>
 
