@@ -256,7 +256,7 @@ export function RSVP() {
                       margin: "0 0 10px", textAlign: "center",
                     }}>Selecciona el horario de salida</p>
                     <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-                      <button className={`rsvp-option ${transporteVuelta === "12" ? "selected-si" : ""}`}
+                      <button className={`rsvp-option ${transporteVuelta === "12.30" ? "selected-si" : ""}`}
                         onClick={() => setTransporteVuelta("12.30")}>12:30 AM</button>
                       <button className={`rsvp-option ${transporteVuelta === "2" ? "selected-si" : ""}`}
                         onClick={() => setTransporteVuelta("2")}>2:00 AM</button>
